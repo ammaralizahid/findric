@@ -19,7 +19,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "FindNow - Complete POS and Inventory Management System",
   description: "FindNow is a powerful marketplace and inventory management system designed for businesses worldwide.",
-  other: { "google-site-verification": "pdDMsTpAk_4Cn2CznwocY6H3Sk2K9bGwNphPSt8_NHs" },
+  other: { "google-site-verification": "ICYHTpLPY5OCwiF87Y2JBH9862VsZs9KJlj_9L7sWbM" },
   openGraph: {
     title: "FindNow - Complete POS Solution",
     description: "Complete POS and inventory management system, flexible and tailored for global customers.",
