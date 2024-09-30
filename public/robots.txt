@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://findnow.com
+Host: https://find-now-nextjs.vercel.app/
 
 # Sitemaps
-Sitemap: https://findnow.com/sitemap.xml
+Sitemap: https://find-now-nextjs.vercel.app/sitemap.xml

@@ -20,7 +20,7 @@ const HomePage = async () => {
         <meta
           name="google-site-verification"
           content="ICYHTpLPY5OCwiF87Y2JBH9862VsZs9KJlj_9L7sWbM"
-        />{" "}
+        />
         <title>{title}</title>
         <meta name="description" content={description} />
       </Head>

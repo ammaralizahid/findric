@@ -61,7 +61,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/your-target-route">
+            <Link href="/test">
               <button className="ml-2 px-8 py-2 bg-[#20bead] border border-white text-white rounded-lg hover:bg-[#20bead] hover:text-white transition-colors duration-300">
                 Explore Store
               </button>
