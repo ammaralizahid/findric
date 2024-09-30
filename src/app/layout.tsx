@@ -36,6 +36,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
+      <meta
+          name="google-site-verification"
+          content="ICYHTpLPY5OCwiF87Y2JBH9862VsZs9KJlj_9L7sWbM"
+        />
         <meta property="og:title" content={String(metadata.openGraph?.title ?? "Default Title")} />
         <meta
           property="og:description"
