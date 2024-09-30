@@ -25,3 +25,30 @@ body {
     text-wrap: balance;
   }
 }
+
+.alert {
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: #fff 0 0 0 0;
+  margin: 9px;
+  height: 10px;
+  width: 10px;
+  transform: scale(1);
+  animation: pulse 1.2s infinite; /* Use the name of the keyframes here */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(.95);
+    box-shadow: rgba(255, 255, 255, .7) 0 0 0 0;
+}
+70% {
+  transform: scale(1);
+  box-shadow: rgba(255, 255, 255, 0) 0 0 0 7px;
+}
+100% {
+  transform: scale(.95);
+  box-shadow: rgba(255, 255, 255, 0) 0 0 0 0;
+}
+}
+

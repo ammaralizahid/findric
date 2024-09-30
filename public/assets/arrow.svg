@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <filter id="Path_13311" x="-5.699" y="9.453" width="83.398" height="67.094" filterUnits="userSpaceOnUse">
+      <feOffset dy="8" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#fab242" flood-opacity="0.259"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-yellow-arrow">
+      <rect width="64" height="64"/>
+    </clipPath>
+  </defs>
+  <g id="yellow-arrow" clip-path="url(#clip-yellow-arrow)">
+    <g id="Group_21975" data-name="Group 21975" transform="translate(-1072.521 67.87) rotate(-8)">
+      <g id="Group_21952" data-name="Group 21952" transform="matrix(-0.469, -0.883, 0.883, -0.469, -910.701, 2174.059)">
+        <g transform="matrix(-0.59, 0.81, -0.81, -0.59, 916.53, 2732.34)" filter="url(#Path_13311)">
+          <path id="Path_13311-2" data-name="Path 13311" d="M41.058,777.472c5.547,8.167,13.821,14.776,23.741,16.435,9.342,1.558,19.35-1.59,25.425-9a1.6,1.6,0,0,0-1.112-2.683l-5.447-.207c-2.023-.075-2.017,3.06,0,3.141l5.459.22-1.357-2.362q-1.608,3.593-3.217,7.175c-.817,1.834,1.885,3.43,2.714,1.589l3.217-7.181a1.6,1.6,0,0,0-1.357-2.362l-5.459-.22v3.141l5.447.207L88,782.693a24.123,24.123,0,0,1-23.245,8.023C56,788.982,48.7,783.133,43.772,775.883,42.641,774.224,39.914,775.795,41.058,777.472Z" transform="matrix(0.92, 0.39, -0.39, 0.92, 282.12, -713.04)" fill="#fab242"/>
+        </g>
+      </g>
+      <g id="Group_21956" data-name="Group 21956" transform="translate(1073.473 91.079) rotate(-2)">
+        <path id="Path_35805" data-name="Path 35805" d="M.886,1.5a9.3,9.3,0,0,1,3.895.243A.706.706,0,0,0,5.154.385,10.964,10.964,0,0,0,.511.142C-.385.281,0,1.642.886,1.5Z" transform="matrix(0.485, 0.875, -0.875, 0.485, 7.309, 1.298)" fill="#fab242" stroke="#fab242" stroke-width="1.5"/>
+        <path id="Path_35806" data-name="Path 35806" d="M1.165,3.293,2.927,1.234c.59-.686-.4-1.694-1-1L.179,2.293c-.587.686.407,1.695,1,1Z" transform="matrix(0.485, 0.875, -0.875, 0.485, 3.084, 9.737)" fill="#fab242" stroke="#fab242" stroke-width="1.5"/>
+        <path id="Path_35807" data-name="Path 35807" d="M.679,1.414A3.985,3.985,0,0,1,3.147,2.47c.669.613,1.672-.384,1-1A5.549,5.549,0,0,0,.679,0c-.907-.056-.9,1.356,0,1.412Z" transform="matrix(0.485, 0.875, -0.875, 0.485, 17.111, 0)" fill="#fab242" stroke="#fab242" stroke-width="1.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

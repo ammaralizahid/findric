@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://findnow.com
+
+# Sitemaps
+Sitemap: https://findnow.com/sitemap.xml
