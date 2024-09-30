@@ -16,8 +16,7 @@ const HomePage = async () => {
   return (
     <>
       <Head>
-      <meta name="google-site-verification" content="pdDMsTpAk_4Cn2CznwocY6H3Sk2K9bGwNphPSt8_NHs" />
-        <title>{title}</title>
+      <meta name="google-site-verification" content="ICYHTpLPY5OCwiF87Y2JBH9862VsZs9KJlj_9L7sWbM" />        <title>{title}</title>
         <meta name="description" content={description} />
       </Head>
       <div className="container mx-auto">
