@@ -10,6 +10,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "skipLibCheck": true,
     "jsx": "preserve",
     "incremental": true,
     "plugins": [
@@ -18,7 +19,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./*"]  // Map "@" to the root of the project
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

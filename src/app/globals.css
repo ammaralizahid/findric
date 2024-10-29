@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Add this to your main CSS file */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 
 :root {
   --background: #ffffff;
@@ -51,4 +54,6 @@ body {
   box-shadow: rgba(255, 255, 255, 0) 0 0 0 0;
 }
 }
-
+html {
+  scroll-behavior: smooth;
+}
