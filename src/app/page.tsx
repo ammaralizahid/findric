@@ -7,10 +7,8 @@ import Support from "./components/Support/Support";
 import VideoPlayer from "./components/VideoPlayer";
 import Feature from "./components/Feature/Feature";
 import Pricing from "./components/Pricing/Pricing"
-import useSectionMeta from './utils/useSectionMeta';
 
 const Home = () => {
-  // useSectionMeta();
   return (
     <div className="relative mx-auto ">
       <div className="flex grid grid-cols-1 md:grid-cols-2 gap-8 inset-0 bg-gradient-to-br from-[#FFFFFF]  to-[#e5ffe4] opacity-90 shadow-xl">
