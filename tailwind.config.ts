@@ -112,6 +112,8 @@ const config: Config = {
         999: '999',
       },
       screens: {
+        sm1:{min: '320px', max: '768px'},
+        ml: {min: '768px', max: '1024px'},
         xs: { min: '320px', max: '640px' },
         // sm: { min: '320px', max: '768px' },
         // md: { min: '768px', max: '1024px' },

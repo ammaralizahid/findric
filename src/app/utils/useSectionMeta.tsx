@@ -1,4 +1,5 @@
-'use client'
+// 'use client' directive is needed for hooks in Next.js
+'use client';
 import { useEffect } from 'react';
 
 function updateMeta(title: string, description: string) {
@@ -9,18 +10,18 @@ function updateMeta(title: string, description: string) {
   if (metaDescription) {
     metaDescription.setAttribute("content", description);
   } else {
-    // Optionally, you can log an error or add the meta tag if it doesn't exist
     console.error('Meta description tag not found.');
   }
 }
 
-function useSectionMeta() {
+// Correctly export the hook
+export default function useSectionMeta() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
 
       if (scrollY < 500) {
-        updateMeta("Features | FindNow", "Description for Home Section");
+        updateMeta("Features | FindNowwww", "Description for Home Section");
       } else if (scrollY < 1500) {
         updateMeta("About | YourSite", "Description for About Section");
       } else {
@@ -32,5 +33,3 @@ function useSectionMeta() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 }
-
-export default useSectionMeta;

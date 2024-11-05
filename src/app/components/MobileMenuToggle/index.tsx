@@ -59,12 +59,12 @@ const MobileMenuToggle = () => {
             </Link>
           </li>
           <li className="flex flex-col gap-3 w-full">
-          <Link href="/test">
+          <Link href="/test" className="flex justify-center">
               <button className="w-full max-w-[728px] px-6 py-2 bg-[#20bead] border border-white text-white rounded-lg hover:bg-[#20bead] hover:text-white transition-colors duration-300">
                 Explore Store
               </button>
             </Link>
-            <Link href="/your-target-route">
+            <Link href="/your-target-route" className="flex justify-center">
               <button className="w-full max-w-[728px] px-6  py-2 bg-white border border-[#20bead] text-[#20bead] rounded-lg hover:bg-[#20bead] hover:text-white transition-colors duration-300">
                 Login
               </button>

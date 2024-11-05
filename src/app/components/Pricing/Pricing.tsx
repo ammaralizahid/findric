@@ -19,12 +19,13 @@ const Pricing = () => {
     <div className="">
       <div className="flex flex-col">
         <div className="flex flex-col gap-10 items-center">
-          <h1 className="font-extrabold md:text-4xl xs:text-22 xs:px-2 sm:text-22 text-center leading-tight">
-            The Best Time Tracker Doesn&#39;t Have To Be{" "}
-            <span className="text-teal-custom">The Most Expensive</span> One
+          <h1 className="features-title font-extrabold md:text-3xl xs:text-22 xs:px-2 sm:text-22 text-center leading-tight">
+          Try any plan with a
+            <span className="text-teal-custom"> free trial </span>
+            to experience the difference firsthand
           </h1>
           <h1 className="text-[#3d4d69] text-lg md:font-medium text-center sm:text-18 text-13">
-            Free For 10 Days{" "}
+            Free For 6 months{" "}
             <span className="text-[5px] leading-none mt-[-20px]">⚫️</span> No
             Credit Card Required
           </h1>
@@ -104,14 +105,14 @@ const Pricing = () => {
             />
           </div>
         </div>
-        <div className="flex justify-center pb-12">
+        {/* <div className="flex justify-center pb-12">
           <Button
             type="button"
             text="See Full Pricing Comparison"
             className="bg-white text-customGreen border-2 border-customGreen w-72 py-6 font-montserrat"
             style={{fontSize:"17px"}}
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

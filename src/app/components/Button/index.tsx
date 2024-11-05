@@ -20,11 +20,12 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   ...rest
 }) => {
-  // Define default styles
+  // Define default styles and fallback class names
   const defaultStyle: React.CSSProperties = {
     borderRadius: "6px",
     cursor: "pointer",
   };
+  const defaultClasses = "flex items-center justify-center h-9 md:h-10 text-customGreen py-1 px-3 font-montserrat text-md border-customGreen border";
 
   // Merge default styles with custom styles
   const buttonStyle: React.CSSProperties = { ...defaultStyle, ...style };
@@ -36,7 +37,7 @@ const Button: React.FC<ButtonProps> = ({
       disabled={disabled}
       {...rest}
       onClick={onClick}
-      className={`flex items-center justify-center h-9 text-customGreen py-1 px-3 font-montserra text-sm border-customGreen border-2 ${className ? className : ""}`}
+      className={className || defaultClasses} // Apply `className` prop if provided, else use defaults
     >
       {icon && <span className={`${text && "mr-1"}`}>{icon}</span>} {text}
     </button>

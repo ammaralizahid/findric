@@ -27,7 +27,7 @@ const Navbar = () => {
         <ul className="hidden lg:flex items-center space-x-4 md:space-x-6 lg:space-x-8 text-sm md:text-lg relative">
           <li>
             <Link href="/your-target-route">
-              <button className="flex flex-row gap-1 ml-2 md:ml-4 px-3 md:px-4 py-1 md:py-2 bg-[#4d94fb] border text-white rounded-lg transition-colors duration-300">
+              <button className="flex flex-row gap-1 ml-2 md:ml-4 px-3 md:px-4 h-11 items-center bg-[#4d94fb] border text-white rounded-lg transition-colors duration-300">
                 <div className="alert"></div>
                 <div className="font-montserrat text-sm md:text-base">
                   Live Product Demo
@@ -67,12 +67,12 @@ const Navbar = () => {
           </li>
           <li className="flex items-center">
             <Link href="/test">
-              <button className="ml-1 md:ml-2 px-6 md:px-8 py-1 md:py-2 bg-[#20bead] border border-white text-white rounded-lg hover:bg-[#20bead] hover:text-white transition-colors duration-300">
+              <button className="ml-1 md:ml-2 px-6 md:px-8 h-11 bg-[#20bead] border border-white text-white rounded-lg hover:bg-[#20bead] hover:text-white transition-colors duration-300">
                 Explore Store
               </button>
             </Link>
             <Link href="/your-target-route">
-              <button className="ml-3 md:ml-6 px-6 md:px-8 py-1 md:py-2 bg-white border border-[#20bead] text-[#20bead] rounded-lg hover:bg-[#20bead] hover:text-white transition-colors duration-300">
+              <button className="ml-3 md:ml-6 px-6 md:px-8 h-11 bg-white border border-[#20bead] text-[#20bead] rounded-lg hover:bg-[#20bead] hover:text-white transition-colors duration-300">
                 Login
               </button>
             </Link>

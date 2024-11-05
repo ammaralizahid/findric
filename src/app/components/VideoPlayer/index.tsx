@@ -49,7 +49,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       <div className="absolute inset-0 cursor-pointer flex justify-end">
         <div
           onClick={handleVideoPlay}
-          className="relative w-full h-full overflow-hidden md:translate-x-[40%] md:translate-y-[-15%]"
+          className="relative w-full h-full overflow-hidden ml:w-[500px] ml:h-[500px]  md:translate-x-[40%] md:translate-y-[-15%]"
         >
           {/* Thumbnail with full rounding and border */}
           <Image

@@ -92,8 +92,8 @@ const Products: React.FC = () => {
 
   return (
     <div className="container mx-auto py-12 px-6">
-      <p className="text-center text-32 opacity-70">🔥</p>
-      <h2 className="text-3xl font-bold mb-8 text-center font-montserrat text-red-400">Hot Products</h2>
+      {/* <p className="text-center text-32 opacity-70">🔥</p> */}
+      {/* <h2 className="text-3xl font-bold mb-8 text-center font-montserrat text-red-400">Hot Products</h2> */}
       <Slider {...settings}>
         {products.length > 0 ? (
           products.map((product) => (
@@ -117,7 +117,7 @@ const Products: React.FC = () => {
                 </span>
                 <span className="ml-2 text-gray-600">{product.rating.rate} / 5</span>
               </div>
-              <Button type={"button"} text={"View Product"} className="w-full text-white bg-customGreen font-medium" />
+              <Button type={"button"} text={"View Product"} className="w-full text-white bg-customGreen p-2  font-semibold" />
             </div>
           ))
         ) : (

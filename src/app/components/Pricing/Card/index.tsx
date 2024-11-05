@@ -46,10 +46,18 @@ const Card: React.FC<CardProps> = ({
       </div>
 
       {/* Pricing Section */}
-      <div className="flex flex-row gap-5">
-        <h1 className="text-5xl font-extrabold font-montserrat">{pricing}</h1> {/* Use pricing from props */}
-        <p className="text-[#3d4d69] flex items-end font-medium">per user/month</p>
-      </div>
+      <div className="flex flex-row gap-5 items-center relative">
+  <h1 className="text-5xl font-extrabold font-montserrat relative">
+    {pricing}
+    <span className="absolute left-0 right-0 top-1/2 h-[2px] bg-black transform -translate-y-1/2 w-full"></span>
+  </h1>
+  <div>
+    <p className="font-bold text-16">FREE</p>
+  <p className="text-[#3d4d69] flex items-end font-medium">per user/month</p>
+    </div>
+</div>
+
+
 
       {/* Description */}
       <p className="font-medium">{description}</p> {/* Use description from props */}
@@ -68,7 +76,7 @@ const Card: React.FC<CardProps> = ({
       <Button 
         type="button" 
         text={buttonText} // Use button text from props
-        className={`text-white font-semibold border-none`} // Removed the inline class for button background
+        className={`text-white font-semibold border-none p-2`} // Removed the inline class for button background
         style={{ backgroundColor: text_color, borderColor: "none" }} // Use inline style for button background color
       />
     </div>
