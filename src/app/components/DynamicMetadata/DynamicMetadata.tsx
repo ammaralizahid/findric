@@ -1,6 +1,5 @@
 // components/DynamicMetadata.tsx
 "use client";
-import { useEffect } from "react";
 import useDynamicMetadata from "../../hooks/useDynamicMetadata";
 
 const DynamicMetadata = () => {

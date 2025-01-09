@@ -8,7 +8,6 @@ import VideoPlayer from "./components/VideoPlayer";
 // import Feature from "./components/Feature/Feature";
 import Pricing from "./components/Pricing/Pricing";
 import Animation from "./components/Animation/Animation";
-import DynamicMetadata from "./components/DynamicMetadata/DynamicMetadata";
 
 const BASE_URL = process.env.BASE_URL
 interface MetaTag {
@@ -23,9 +22,9 @@ const Home = async () => {
     cache: "no-store", // This ensures the data is fetched on every request
   });
   const metaTags: MetaTag[] = await response.json();
+  console.log("metagtags fetched",metaTags)
   return (
     <>
-      {/* <DynamicMetadata /> */}
       <div className="relative mx-auto ">
         {/* Hero Section */}
         <section data-section="hero">

@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
 import Card from "./Card";
-import Button from "../Button";
-
 const Pricing = () => {
   const features = [
     { label: "Unlimited Projects" },

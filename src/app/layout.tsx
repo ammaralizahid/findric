@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar/Navbar";
 // import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "./components/Footer/Footer";
-import Head from "next/head";
 
 // Load fonts locally
 // const geistSans = localFont({
