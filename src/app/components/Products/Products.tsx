@@ -36,7 +36,6 @@ const Products: React.FC = () => {
         const data = await response.json();
         if (Array.isArray(data)) {
           setProducts(data);
-          console.log("products>>>>>>>>>>",data)
         } else {
           console.error("Unexpected data format:", data);
         }

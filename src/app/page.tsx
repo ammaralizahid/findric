@@ -5,11 +5,12 @@ import Products from "./components/Products/Products";
 import StarRating from "./components/StarRating/StarRating";
 import Support from "./components/Support/Support";
 import VideoPlayer from "./components/VideoPlayer";
-import Feature from "./components/Feature/Feature";
+// import Feature from "./components/Feature/Feature";
 import Pricing from "./components/Pricing/Pricing";
 import Animation from "./components/Animation/Animation";
 import DynamicMetadata from "./components/DynamicMetadata/DynamicMetadata";
 
+const BASE_URL = process.env.BASE_URL
 interface MetaTag {
   id: number; // Adjust based on your schema
   title: string;
@@ -18,14 +19,13 @@ interface MetaTag {
 }
 const Home = async () => {
   // Fetch meta tags directly in the component
-  const response = await fetch("http://localhost:3000/api/meta", {
+  const response = await fetch(`${BASE_URL}/api/meta`, {
     cache: "no-store", // This ensures the data is fetched on every request
   });
   const metaTags: MetaTag[] = await response.json();
-  // console.log("fetched data from backend>>>>>", metaTags);
   return (
     <>
-      <DynamicMetadata />
+      {/* <DynamicMetadata /> */}
       <div className="relative mx-auto ">
         {/* Hero Section */}
         <section data-section="hero">
