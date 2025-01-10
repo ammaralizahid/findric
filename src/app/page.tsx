@@ -9,20 +9,7 @@ import VideoPlayer from "./components/VideoPlayer";
 import Pricing from "./components/Pricing/Pricing";
 import Animation from "./components/Animation/Animation";
 
-const BASE_URL = process.env.BASE_URL
-interface MetaTag {
-  id: number; // Adjust based on your schema
-  title: string;
-  description: string;
-  // Add other meta tag fields as necessary
-}
 const Home = async () => {
-  // Fetch meta tags directly in the component
-  const response = await fetch(`${BASE_URL}/api/meta`, {
-    cache: "no-store", // This ensures the data is fetched on every request
-  });
-  const metaTags: MetaTag[] = await response.json();
-  console.log("metagtags fetched",metaTags)
   return (
     <>
       <div className="relative mx-auto ">
