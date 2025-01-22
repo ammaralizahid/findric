@@ -28,6 +28,7 @@ const config: Config = {
         brightWhite: 'rgb(255, 255, 255)',
         lightgray: 'rgb(243, 245, 249)',
         custombgBlue: 'rgb(248, 249, 252)',
+        'font-black': 'rgb(0, 0, 0)',
       },
       fontSize: {
         customExtraSmall: '11px',
@@ -47,9 +48,12 @@ const config: Config = {
         12: "12px",
         13: "13px",
         40: "40px",
+        'base': '16px',
       },
       lineHeight:{
-        52: "52px"
+        52: "52px",
+        'tight': '40px',
+        '18': '18px',
       },
       spacing: {
         3: '12px', // 12px
@@ -85,6 +89,19 @@ const config: Config = {
       fontFamily: {
         "montserrat": ['Montserrat', 'sans-serif'],
         NoMontserrat: ['Montserrat', 'sans-serif'],
+       'tt-norms': ['"TT Norms Pro"', 'sans-serif'],
+        'open-sans': ['"Open Sans"', 'sans-serif'],
+        'roboto': ['"Roboto"', 'sans-serif'],
+        'simsun': ['"SimSun"', 'serif'],
+        custom: [
+          '"TT Norms Pro"', 
+          '"Open Sans"', 
+          'Roboto', 
+          'Arial', 
+          'Helvetica', 
+          'sans-serif', 
+          'SimSun',
+        ],
       },
       height: {
         pannelHeight: '385px',

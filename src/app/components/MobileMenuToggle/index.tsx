@@ -34,7 +34,7 @@ const MobileMenuToggle = () => {
       <div
         className={`${
           isOpen ? "max-h-screen" : "max-h-0"
-        } overflow-hidden transition-all duration-500 ease-in-out absolute left-0 top-full w-full bg-white shadow-lg z-40 border-t border-t-[#ddd] border-t-[0.5px] `}
+        } overflow-hidden transition-all duration-500 ease-in-out absolute left-0 top-full w-full bg-white shadow-lg z-40  `}
       >
         <ul className="flex flex-col items-start space-y-4 py-4 px-2">
           <li className="border-b border-b-[#ddd] border-b-[0.5px] w-full">
