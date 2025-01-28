@@ -8,10 +8,12 @@ import VideoPlayer from "./components/VideoPlayer";
 // import Feature from "./components/Feature/Feature";
 import Pricing from "./components/Pricing/Pricing";
 import Animation from "./components/Animation/Animation";
+import Navbar from "./components/Navbar/Navbar";
 
 const Home = async () => {
   return (
     <>
+      <Navbar />
       <div className="relative mx-auto ">
         {/* Hero Section */}
         <section data-section="hero">
