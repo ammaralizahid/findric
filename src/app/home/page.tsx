@@ -22,7 +22,7 @@ export default function Home() {
         <h2 id="products-title" className=" text-customGreen  mt-20   flex font-montserrat font-semibold text-3xl justify-center text lg:px-4">
           Our Domains
         </h2>
-        <DomainCard domains={domains} />  
+        <DomainCard domains={domains} /> 
       </section>
     </div>
   );
