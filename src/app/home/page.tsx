@@ -1,11 +1,11 @@
 import React from "react";
-import NavbarHome from "../components/Navbar/NavbarHome";
+import NavbarHome from "../../components/Navbar/NavbarHome";
 // import Collection from "../components/Collection/Collection";
-import Categories from "../components/Categories/Categories";
-import DomainCard from "../components/DomainsCards/DomainCard";
-import ProductSlider from "../components/ProductSlider/ProductSlider";
-import Product from "../components/Product/Product";
-import cardData  from "../components/mookdata/mook"; 
+import Categories from "../../components/Categories/Categories";
+import DomainCard from "../../components/DomainsCards/DomainCard";
+import ProductSlider from "../../components/ProductSlider/ProductSlider";
+import Product from "../../components/Product/Product";
+import cardData  from "../../components/mookdata/mook"; 
 
 
 export default function Home() {
