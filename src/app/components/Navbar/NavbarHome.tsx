@@ -29,7 +29,7 @@ const NavbarHome = () => {
 
 
           {/* Categories Dropdown */}
-          <div className="mt-4 ml-[-23px] md:mt-0 md:ml-6">
+          <div className=" ml-[-23px] md:mb-10 md:ml-6">
             <HomeCatrgories />
           </div>
         </div>
