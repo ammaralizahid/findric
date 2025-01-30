@@ -9,6 +9,9 @@ import VideoPlayer from "./components/VideoPlayer";
 import Pricing from "./components/Pricing/Pricing";
 import Animation from "./components/Animation/Animation";
 import Navbar from "./components/Navbar/Navbar";
+import ProductSlider from "./components/ProductSlider/ProductSlider";
+import Product from "./components/Product/Product";
+import cardData  from "./components/mookdata/mook"; 
 
 const Home = async () => {
   return (
@@ -95,7 +98,18 @@ const Home = async () => {
           >
             Our Domains
           </h2>
-          <Products />
+
+          
+          <ProductSlider>
+        {cardData.length > 0 ? (
+          cardData.map((item) => <Product key={item.id} item={item} />)
+        ) : (
+          <p className="text-center text-gray-500">No products available.</p>
+        )}
+      </ProductSlider>
+
+
+      {/* <Products/> */}
         </section>
         {/* Pricing Section */}
         <section

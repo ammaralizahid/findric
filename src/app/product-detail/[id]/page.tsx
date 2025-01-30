@@ -1,5 +1,7 @@
 
 import Head from 'next/head';
+import Image from "next/image";
+
  const page = () => {
     const product = {
         name: "Premium Sport Sneakers",
@@ -47,9 +49,11 @@ import Head from 'next/head';
               <div className="flex flex-col-reverse lg:flex-row gap-4">
                 <div className="flex lg:flex-col gap-4 mt-4 lg:mt-0">
                   {product.images.map((image, index) => (
-                    <img
+                    <Image
                       key={index}
                       src={image}
+                      width={40}
+                      height={30}
                       alt={`Sneaker thumbnail ${index + 1}`}
                       className="w-20 h-20 object-cover cursor-pointer rounded-lg hover:ring-2 ring-blue-500"
                     />
