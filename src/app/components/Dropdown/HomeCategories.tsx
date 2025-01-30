@@ -166,6 +166,15 @@ const categories: Category[] = [
           { name: 'Hiking Shoes', link: '#', icon: FaRunning },
         ],
       },
+      {
+        heading: 'Books',
+        items: [
+          { name: 'Fiction', link: '#', icon: FaBook },
+          { name: 'Non-fiction', link: '#', icon: FaBook },
+          { name: 'Comics', link: '#', icon: FaBook },
+          { name: 'Educational', link: '#', icon: FaBook },
+        ],
+      },
     ],
   },
   {
@@ -242,13 +251,21 @@ const categories: Category[] = [
           { name: 'Garden Tools', link: '#', icon: FaApple },
         ],
       },
+      {
+        heading: 'Makeup',
+        items: [
+          { name: 'Lipsticks', link: '#', icon: FaPaintBrush },
+          { name: 'Foundation', link: '#', icon: FaPaintBrush },
+          { name: 'Eyeshadows', link: '#', icon: FaPaintBrush },
+        ],
+      },
     ],
   },
 ];
 
 const HomeCatrgories = () => {
   const [activeCategory, setActiveCategory] = useState<Category | null>(null);
-  const [activeSubCategory, setActiveSubCategory] = useState<SubCategory | null>(null); 
+  const [activeSubCategory, setActiveSubCategory] = useState<SubCategory | null>(null);
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -264,7 +281,7 @@ const HomeCatrgories = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  console.log();
+  console.log(activeCategory);
 
   return (
 
@@ -275,7 +292,7 @@ const HomeCatrgories = () => {
 
 
           <div
-            className="relative inline-block text-left"
+            className="absolute inline-block text-left"
             onMouseEnter={() => !isMobile && setDropdownVisible(true)}
             onMouseLeave={() => !isMobile && setDropdownVisible(false)}
           >
@@ -283,8 +300,8 @@ const HomeCatrgories = () => {
 
             {/* Dropdown Button */}
             <button
-              className={` px-6 bg-[#f5f5f5] leading-normal md:px-8 h-[40px] w-auto md:w-[256px] border  rounded-full transition-colors duration-300  flex items-center justify-between ${dropdownVisible
-                ? 'rounded-b-lg font-medium	   bg-[#f2f2f2] text-[#191919] text-base	 '
+              className={` px-6 bg-[#f2f2f2] leading-normal md:px-8 h-[40px] w-auto md:w-[256px] rounded-full transition-colors duration-300  flex items-center justify-between ${dropdownVisible
+                ? 'font-medium bg-[#f2f2f2] text-[#20BEAD] text-base	 '
                 : 'text-[#222222] 	 hover:bg-[#f2f2f2] hover:text-[#222222]'
                 }`}
               onClick={() => isMobile && setDropdownVisible(!dropdownVisible)}
@@ -292,7 +309,7 @@ const HomeCatrgories = () => {
 
             >
               <FaBars className="text-sm " />
-              <span className="md:block mr-8 	 font-montserrat text-font-black text-sm leading-normal">
+              <span className="md:block mr-8 	text-[#20BEAD] font-montserrat text-font-black text-sm leading-normal">
                 All Categories
               </span>
               <span
@@ -303,25 +320,18 @@ const HomeCatrgories = () => {
               </span>
             </button>
 
+
+
             {/* Dropdown Menu */}
             {dropdownVisible && (
               <div
                 onMouseLeave={() => !isMobile && setActiveCategory(null)}
-                className={`absolute md:left-0 ${isMobile
-                  ? 'left-0 top-full w-screen bg-white z-50'
-                  // : 'ml-6 w-full md:w-[950px] h-[450px]'
-                  : `${activeCategory ? 'w-[1000px] ' : ''}  text-[#222222]  min-h-[530px] h-auto`
-                  } origin-top-left rounded-full mt-[-10px]   focus:outline-none flex flex-col md:flex-row`}
+                className={` md:left-0 ${activeCategory ? ' ' : ''}  text-[#222222]  min-h-[530px] h-auto origin-top-left mt-[-13.5px]  focus:outline-none flex flex-col md:flex-row`}
               >
                 {/* Sidebar for Categories */}
                 <div
-                  className={`border-r  border-[#f2f2f2] bg-[#f2f2f2] md:w-[256px] rounded-b-3xl overflow-y-auto ${isMobile ? 'flex-grow' : ''
-                    }`}
-
-                >
-                  <div className="py-2"
-
-                  >
+                  className={`  bg-[#f2f2f2] md:w-[256px] rounded-b-3xl   overflow-y-auto`}>
+                  <div className="py-2">
 
                     {categories.map((category, index) => (
                       <div
@@ -335,8 +345,8 @@ const HomeCatrgories = () => {
 
                         onClick={() => isMobile && setActiveCategory(category)}
                       >
-                        <div className="flex items-center  font-montserrat   tracking-normal  ">
-                          <category.icon className="w-4 h-4 mr-4 ml-8 font-light " />
+                        <div className="flex items-center  font-montserrat tracking-normal">
+                          <category.icon className="w-4 h-4 mr-4 ml-8 text-[#20BEAD] font-light " />
                           {category.name}
                         </div>
                       </div>
@@ -344,44 +354,54 @@ const HomeCatrgories = () => {
                   </div>
                 </div>
 
+
+
                 {/* Right Section for Subcategories */}
-                {/* <div className={`flex-grow overflow-hidden  bg-white ${isMobile ? 'px-4' : ''}`}> */}
                 <div
                   className={`flex-grow overflow-hidden bg-white ${isMobile
                     ? ' overflow-y-auto max-h-[400px]'
-                    : 'some-other-class'
+                    : 'some-other-class overflow-y-auto max-h-[550px] shadow'
                     } ${activeCategory ? 'rounded-xl	' : 'hidden'}`}
                 >
                   {activeCategory ? (
-                    <div className="py-2  px-2 grid grid-cols-1 md:grid-cols-3 gap-4">
-                      {activeCategory.subCategories.map((subCategory, subIndex) => (
-                        <div key={subIndex} className="w-full">
-                          <div className="text-sm font-montserrat mt-4 font-medium text-gray-800  ml-4">
-                            {subCategory.heading}
-                          </div>
-                          <div className="flex flex-col gap-2">
-                            {subCategory.items.map((item, itemIndex) => (
-                              <a
-                                key={itemIndex}
-                                href={item.link}
-                                className={`flex items-center  leading-18 font-custom font-normal	 px-3 mt-2  text-sm text-gray-500  hover:text-[red]  transition-all duration-300 ease-in-out ${activeSubCategory?.name === item.name ? 'text-[red]' : ''
-                                  }`}
-                                onMouseEnter={() => setActiveSubCategory(item)}
-                                onClick={() => setActiveSubCategory(item)}
-                              >
-                                <item.icon className="w-4 h-4 mr-2 " />
+                 <div
+                 className={`py-2 px-2 grid gap-4 ${
+                   activeCategory.subCategories.length === 2 ? "grid-cols-2" : "grid-cols-1 md:grid-cols-3"
+                 }`}
+               >
+                 {activeCategory.subCategories.map((subCategory, subIndex) => (
+                   <div key={subIndex} className="">
+                     <div className="text-sm font-montserrat mt-4 font-medium text-[#20BEAD] ml-4">
+                       {subCategory.heading}
+                     </div>
+                     <div className="flex flex-col gap-2">
+                       {subCategory.items.map((item, itemIndex) => (
+                         <a
+                           key={itemIndex}
+                           href={item.link}
+                           className={`flex items-center leading-18 font-custom font-light px-3 mt-2 text-sm text-gray-500 hover:text-[#20BEAD] transition-all duration-300 ease-in-out ${
+                             activeSubCategory?.name === item.name ? "text-[red]" : ""
+                           }`}
+                           onMouseEnter={() => setActiveSubCategory(item)}
+                           onClick={() => setActiveSubCategory(item)}
+                         >
+                           <item.icon className="w-4 h-4 mr-2" />
+                           {item.name}
+                         </a>
+                       ))}
+                     </div>
+                   </div>
+                 ))}
+               </div>
+                  )
+                    :
+                    (
+                      <div className="text-center py-20 text-gray-400">No Sub-categories</div>
+                    )
+                  }
 
-                                {item.name}
-                              </a>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="text-center py-20 text-gray-400">No Sub-categories</div>
-                  )}
                 </div>
+
               </div>
             )}
           </div>

@@ -278,115 +278,172 @@ const AllCollectioMenu = () => {
         }));
     };
 
-    const renderMenu = (categories: Category[]) => {
-        return categories.map((category) => (
+    // const renderMenu = (categories: Category[]) => {
+    //     return categories.map((category) => (
+    //         <div
+    //             key={category.name}
+    //             className=" border-[#0392AA]  space-y-4 max-h-96 overflow-y-auto  "
+    //         >
+
+    //             {/* Main Category Button */}
+
+    //             <button
+    //                 className="flex justify-between items-center w-full px-4 py-3 text-[] hover:text-white  hover:bg-[gray] transition-all duration-200"
+    //                 onClick={() => toggleCategory(category.name)}
+    //             >
+    //                 <div className="flex items-center gap-3">
+    //                     {category.icon && (
+    //                         <category.icon className="text-2xl" />
+    //                     )}
+    //                     <span className="text-lg font-medium font-montserrat">{category.name}</span>
+    //                 </div>
+    //                 <span className="text-sm">
+    //                     {openCategories[category.name] ? (
+    //                         <FaChevronUp className="text-white" />
+    //                     ) : (
+    //                         <FaChevronDown className="text-[]" />
+    //                     )}
+    //                 </span>
+    //             </button>
+
+    //             {/* Subcategories */}
+    //             {openCategories[category.name] && (
+    //                 <div className="space-y-3 bg-white">
+    //                     {category.subCategories.map((subCategory) => (
+    //                         <div
+    //                             key={subCategory.heading}
+    //                             className="bg- p-3 rounded-md shadow-sm"
+    //                         >
+    //                             {/* Subcategory Button */}
+    //                             <button
+    //                                 className="flex justify-between items-center w-full px-3 py-2 bg-gray-200 rounded-md text-gray-700 hover:text-white hover:bg-[gray] transition-all duration-150"
+    //                                 onClick={() =>
+    //                                     toggleSubCategory(category.name, subCategory.heading)
+    //                                 }
+    //                             >
+    //                                 <span className="text-sm font-montserrat">
+    //                                     {subCategory.heading}
+    //                                 </span>
+    //                                 <span className="text-sm">
+    //                                     {openSubCategories[category.name] ===
+    //                                         subCategory.heading
+    //                                         ? <FaChevronUp className="text-white" />
+    //                                         : <FaChevronDown className="text-black" />
+    //                                     }
+    //                                 </span>
+    //                             </button>
+
+    //                             {/* Nested Items */}
+    //                             {openSubCategories[category.name] === subCategory.heading && (
+    //                                 <div className="mt-2 space-y-2 max-h-48 overflow-y-auto">
+    //                                     {subCategory.items.map((item) => (
+    //                                         <a
+    //                                             key={item.name}
+    //                                             href={item.link}
+    //                                             className="flex items-center w-full px-3 py-2 bg-white rounded-md text-gray-600 hover:bg-[#20BEAD] transition-all duration-150"
+    //                                         >
+    //                                             <item.icon className="mr-2 text-lg" />
+    //                                             <span className="text-sm">{item.name}</span>
+    //                                         </a>
+    //                                     ))}
+    //                                 </div>
+    //                             )}
+    //                         </div>
+    //                     ))}
+    //                 </div>
+    //             )}
+    //         </div>
+
+
+    //     ));
+    // };
+
+    return (
+        <div className="relative">
+            {/* Sidebar */}
             <div
-                key={category.name}
-                className=" border-[#0392AA]  space-y-4 max-h-96 overflow-y-auto  "
+                className={`fixed top-0 left-0 w-full h-full bg-white shadow-lg z-50 transition-transform duration-300 transform ${isSidebarVisible ? "translate-x-0" : "-translate-x-full"
+                    }`}
             >
-
-                {/* Main Category Button */}
-
                 <button
-                    className="flex justify-between items-center w-full px-4 py-3 text-[] hover:text-white  hover:bg-[gray] transition-all duration-200"
-                    onClick={() => toggleCategory(category.name)}
+                    className="absolute top-4 right-4 text-gray-500"
+                    onClick={() => setIsSidebarVisible(false)}
                 >
-                    <div className="flex items-center gap-3">
-                        {category.icon && (
-                            <category.icon className="text-2xl" />
-                        )}
-                        <span className="text-lg font-medium font-montserrat">{category.name}</span>
-                    </div>
-                    <span className="text-sm">
-                        {openCategories[category.name] ? (
-                            <FaChevronUp className="text-white" />
-                        ) : (
-                            <FaChevronDown className="text-[]" />
-                        )}
-                    </span>
+                    <FaTimes className="text-lg" />
                 </button>
 
-                {/* Subcategories */}
-                {openCategories[category.name] && (
-                    <div className="space-y-3 bg-white">
-                        {category.subCategories.map((subCategory) => (
-                            <div
-                                key={subCategory.heading}
-                                className="bg- p-3 rounded-md shadow-sm"
-                            >
-                                {/* Subcategory Button */}
+                <div className="mt-12 px-4">
+                    <h2 className="text-xl font-bold text-center text-[#20BEAD] mb-4">All Collection</h2>
+
+                    <div className="space-y-1 bg-[#e9f7f6] rounded-lg">
+                        {categories.map((category) => (
+                            <div key={category.name} className="space-y-3">
+                                {/* Main Category Button */}
                                 <button
-                                    className="flex justify-between items-center w-full px-3 py-2 bg-gray-200 rounded-md text-gray-700 hover:text-white hover:bg-[gray] transition-all duration-150"
-                                    onClick={() =>
-                                        toggleSubCategory(category.name, subCategory.heading)
-                                    }
+                                    className="flex justify-between items-center border-b-2 w-full py-2 px-4  font-montserrat font-ligh text-gray-700  rounded-lg  transition-all duration-500 ease-in-out"
+                                    onClick={() => toggleCategory(category.name)}
                                 >
-                                    <span className="text-sm font-montserrat">
-                                        {subCategory.heading}
-                                    </span>
-                                    <span className="text-sm">
-                                        {openSubCategories[category.name] ===
-                                            subCategory.heading
-                                            ? <FaChevronUp className="text-white" />
-                                            : <FaChevronDown className="text-black" />
-                                        }
-                                    </span>
+                                    <div className="flex items-center gap-3">
+                                        <category.icon className="text-xl text-[#20BEAD]" />
+                                        <span className=" ">{category.name}</span>
+                                    </div>
+                                    {openCategories[category.name] ? (
+                                        <FaChevronUp className="text-sm  text-[#20BEAD]" />
+                                    ) : (
+                                        <FaChevronDown className="text-sm " />
+                                    )}
                                 </button>
 
-                                {/* Nested Items */}
-                                {openSubCategories[category.name] === subCategory.heading && (
-                                    <div className="mt-2 space-y-2 max-h-48 overflow-y-auto">
-                                        {subCategory.items.map((item) => (
-                                            <a
-                                                key={item.name}
-                                                href={item.link}
-                                                className="flex items-center w-full px-3 py-2 bg-white rounded-md text-gray-600 hover:bg-[#20BEAD] transition-all duration-150"
-                                            >
-                                                <item.icon className="mr-2 text-lg" />
-                                                <span className="text-sm">{item.name}</span>
-                                            </a>
-                                        ))}
+                                {/* Subcategories */}
+                                {openCategories[category.name] && (
+                                    <div className="pl-6 mt-2  bg-gray-50 rounded-lg border-l-4 border-teal-500 overflow-hidden relative">
+                                        <div className="max-h-80 mt-2 space-y- overflow-auto scrollbar-thin scrollbar-thumb-teal-500 scrollbar-track-gray-100">
+                                            {category.subCategories.map((subCategory) => (
+                                                <div key={subCategory.heading} className=" ">
+                                                    {/* Subcategory Button */}
+                                                    <button
+                                                        className="flex justify-between items-center w-full py-2  border-black px-3 text-gray-600 hover:text-[white] hover:bg-[#20BEAD]  rounded-md transition-all duration-150 ease-in-out"
+                                                        onClick={() =>
+                                                            toggleSubCategory(category.name, subCategory.heading)
+                                                        }
+                                                    >
+                                                        <span className="text-sm font-montserrat font-medium">{subCategory.heading}</span>
+                                                        {openSubCategories[category.name] === subCategory.heading ? (
+                                                            <FaChevronUp className="text-xs text-[white]" />
+                                                        ) : (
+                                                            <FaChevronDown className="text-xs text-[#20BEAD]" />
+                                                        )}
+                                                    </button>
+
+                                                    {/* Nested Items */}
+                                                    {openSubCategories[category.name] === subCategory.heading && (
+                                                        <div className="pl-4 mt-1 space-y-1 bg-white rounded-md text-sm font-montserrat font-medium shadow-sm max-h-40 overflow-y-auto scrollbar-thin scrollbar-thumb-teal-500 scrollbar-track-gray-100 mx-auto w-11/12 ">
+                                                            {subCategory.items.map((item) => (
+                                                                <a
+                                                                    key={item.name}
+                                                                    href={item.link}
+                                                                    className="flex items-center border-b-2 py-2 px-3 text-gray-600 hover:bg-teal-100 rounded-md"
+                                                                >
+                                                                    <item.icon className="mr-2 text-lg" />
+                                                                    <span className="text-sm">{item.name}</span>
+                                                                </a>
+                                                            ))}
+                                                        </div>
+                                                    )}
+
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
+
                                 )}
                             </div>
                         ))}
                     </div>
-                )}
-            </div>
-
-
-        ));
-    };
-
-    return (
-        <div className="relative ">
-            {/* Mobile Sidebar */}
-            <div
-                className={`fixed top-0 left-0 w-full h-full bg-[#EDF2FA] p-6 border-r border-gray-200 shadow-lg md:hidden transition-transform duration-300 transform ${isSidebarVisible ? "translate-x-0" : "-translate-x-full"}`}
-            >
-                {isSidebarVisible && (
-                    <FaTimes
-                        className="absolute top-4 right-4 w-6 h-6 text-[#0392AA] cursor-pointer"
-                        onClick={() => setIsSidebarVisible(false)}
-                    />
-                )}
-
-                <div className="mt-8 mb-8 flex items-center text-[#20BEAD] font-extrabold text-xl">
-                    {!isSidebarVisible && (
-                        <FaBars
-                            className="w-6 h-6 text-[#20BEAD] cursor-pointer"
-                            onClick={() => setIsSidebarVisible(true)}
-                        />
-                    )}
-                    <span className="flex-1 ml-20  ">All Collections</span>
                 </div>
-
-                {/* Main Menu */}
-                <div className="space-y-4   max-h-[calc(100vh-160px)] overflow-y-auto">{renderMenu(categories)}</div>
             </div>
 
-
-            {/* Main Content */}
+            {/* Toggle Button */}
             <div className="p-6">
                 <button
                     className="px-6 bg-[#f5f5f5] leading-normal md:px-8 h-[40px] w-auto md:w-[256px] border rounded-full transition-colors duration-300 flex items-center justify-between"
@@ -400,6 +457,7 @@ const AllCollectioMenu = () => {
                     <FaChevronRight className="ml-2 text-xs" />
                 </button>
             </div>
+        
         </div>
     );
 };
