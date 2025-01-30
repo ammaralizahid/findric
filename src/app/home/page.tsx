@@ -30,6 +30,8 @@ export default function Home() {
         <h2 id="products-title" className=" text-customGreen  mt-20   flex font-montserrat font-semibold text-3xl justify-center text lg:px-4">
           Our Domains
         </h2>
+
+        
         <ProductSlider>
         {cardData.length > 0 ? (
           cardData.map((item) => <Product key={item.id} item={item} />)
