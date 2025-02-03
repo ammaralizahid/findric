@@ -9,7 +9,7 @@ import HomeCatrgories from '../Dropdown/HomeCategories';
 const NavbarHome = () => {
   return (
     <header className="sticky top-0 z-50 bg-white border ring-offset-[#20bead]">
-      <nav className="w-full px-6 md:px-10 xl:px-[88px] py-4 md:py-5 flex flex-wrap items-center justify-between">
+      <nav className="w-full px-6 md:px-10 xl:px-[88px] py-4 md:py-5 flex flex-wrap border  justify-between">
         {/* Logo and Categories Dropdown */}
         <div className="flex flex-col md:flex-row items-start md:items-center">
           {/* Logo */}
