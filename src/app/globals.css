@@ -4,7 +4,32 @@
 /* Add this to your main CSS file */
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0) scale(1); }
+  50% { transform: translateY(-15px) translateX(10px) scale(1.1); }
+}
 
+@keyframes progress {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 4s linear infinite;
+}
+
+.animate-progress {
+  animation: progress 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
