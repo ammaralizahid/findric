@@ -22,6 +22,6 @@
       "@/*": ["./*"]  // Map "@" to the root of the project
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/ProductSlider"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/ProductSlider"],
   "exclude": ["node_modules"]
 }
