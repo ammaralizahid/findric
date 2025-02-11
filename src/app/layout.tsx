@@ -1,20 +1,6 @@
 import type { Metadata } from "next";
-import Navbar from "../components/Navbar/Navbar";
-// import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "../components/Footer/Footer";
-
-// Load fonts locally
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
 
 // SEO Metadata
 export const metadata: Metadata = {
@@ -75,7 +61,6 @@ export default function RootLayout({
         />
       </head>
       <body className={`antialiased min-h-screen flex flex-col`}>
-        {/* <Navbar /> */}
         <main className="flex-grow">{children}</main>
         <Footer />
       </body>

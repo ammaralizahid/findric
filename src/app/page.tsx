@@ -1,7 +1,6 @@
 import Button from "../components/Button";
 import Demo from "../components/Demo/Demo";
 import { Features } from "../components/Features";
-import Products from "../components/Products/Products";
 import StarRating from "../components/StarRating/StarRating";
 import Support from "../components/Support/Support";
 import VideoPlayer from "../components/VideoPlayer";
@@ -11,7 +10,8 @@ import Animation from "../components/Animation/Animation";
 import Navbar from "../components/Navbar/Navbar";
 import ProductSlider from "../components/ProductSlider/ProductSlider";
 import Product from "../components/Product/Product";
-import cardData  from "../components/mock/mock"; 
+import { cardData } from "../components/mock/mock";
+// import cardData  from "../components/mock/mock"; 
 
 const Home = async () => {
   return (

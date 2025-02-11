@@ -2,7 +2,9 @@ import React from 'react';
 import NavbarHome from '@/src/components/Navbar/NavbarHome';
 import ProductSlider from '@/src/components/ProductSlider/ProductSlider';
 import Product from '@/src/components/Product/Product';
-import cardData from '@/src/components/mock/mock';
+import { cardData } from '@/src/components/mock/mock';
+// import { cardData } from '@/src/components/mock/mock';
+// import cardData from '@/src/components/mock/mock';
 
 export default function Home() {
   return (

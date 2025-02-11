@@ -1,6 +1,4 @@
 'use client';
-import Button from "../Button/index";
-import { CardItem } from "../mock/mock";
 import Image from "next/image";
 
 interface CardProps {
@@ -39,15 +37,7 @@ const product: React.FC<CardProps> = ({ title, image, description }) => (
       <p className="text-gray-400 text-16 mb-4 ">
         {description}
       </p>
-      {/* <div className="flex justify-between items-center">
-        <span className="text-lg font-bold text-gray-700">{item?.price}</span>
-        <Button
-         type={"button"}
-         text={"View Details"}
-          className="px-4 py-2 bg-[#4DB6AC]/80 text-white rounded-lg hover:bg-[#4DB6AC]"
-          aria-label={item?.title}
-        />
-      </div> */}     
+      
     </div>
   </div>
 );

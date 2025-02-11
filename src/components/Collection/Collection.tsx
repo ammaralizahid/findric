@@ -17,7 +17,7 @@ const Collection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState<boolean>(true);
   const [favorites, setFavorites] = useState<number[]>([]); // Array to keep track of favorite products
-  const [showFavoriteButton, setShowFavoriteButton] = useState<number | null>(null); // Manage visibility of the favorite button
+  // const [showFavoriteButton, setShowFavoriteButton] = useState<number | null>(null); // Manage visibility of the favorite button
 
   // Type the useRef hook with HTMLDivElement for the slider container
   const sliderRef = useRef<HTMLDivElement | null>(null);
@@ -134,17 +134,20 @@ const Collection: React.FC = () => {
 
   // Toggle favorite functionality
   const toggleFavorite = (id: number) => {
+    console.log(typeof id); // Ensure this logs 'number'
+  
     setFavorites((prev) =>
       prev.includes(id) ? prev.filter((favoriteId) => favoriteId !== id) : [...prev, id]
     );
-
+  
     // Show the favorite button for one second
-    setShowFavoriteButton(id);
-    setTimeout(() => {
-      setShowFavoriteButton(null);
-    }, 1000);
+    // setShowFavoriteButton(id);
+  
+    // setTimeout(() => {
+    //   setShowFavoriteButton(null);
+    // }, 1000);
   };
-
+  
   return (
     <div className="relative w-full overflow-hidden py-8">
       {/* Heading for All Collections */}
