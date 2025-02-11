@@ -33,7 +33,6 @@ function ShopList() {
 
   return (
     <>
-  
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main className="">
