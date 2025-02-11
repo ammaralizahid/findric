@@ -446,15 +446,15 @@ const AllCollectioMenu = () => {
             {/* Toggle Button */}
             <div className="p-6">
                 <button
-                    className="px-6 bg-[#f5f5f5] leading-normal md:px-8 h-[40px] w-auto md:w-[256px] border rounded-full transition-colors duration-300 flex items-center justify-between"
+                    className="px-6 bg-[#f5f5f5] leading-normal md:px-8 h-[40px] w-auto md:w-[256px] border border-[#20BEAD] rounded-full transition-colors duration-300 flex items-center justify-between"
                     onClick={() => setIsSidebarVisible(true)}
                 >
-                    <FaBars className="text-sm" />
-                    <span className="md:block mr-8 ml-8 font-montserrat text-font-black text-sm leading-normal">
+                    <FaBars className="text-sm text-[#20BEAD]"  />
+                    <span className="md:block mr-8 ml-8 font-montserrat  text-[#20BEAD] text-sm leading-normal">
                         All Categories
                     </span>
 
-                    <FaChevronRight className="ml-2 text-xs" />
+                    <FaChevronRight className="ml-2 text-xs text-[#20BEAD]" />
                 </button>
             </div>
         

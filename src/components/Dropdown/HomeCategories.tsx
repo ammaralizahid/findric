@@ -300,23 +300,23 @@ const HomeCatrgories = () => {
 
             {/* Dropdown Button */}
             <button
-              className={` px-6 bg-[#f2f2f2] leading-normal md:px-8 h-[40px] w-auto md:w-[256px] rounded-full transition-colors duration-300  flex items-center justify-between ${dropdownVisible
+              className={` px-6 leading-normal md:px-8 h-[40px] w-auto md:w-[256px] rounded-full transition-colors duration-300  flex items-center justify-between ${dropdownVisible
                 ? 'font-medium bg-[#f2f2f2] text-[#20BEAD] text-base	 '
-                : 'text-[#222222] 	 hover:bg-[#f2f2f2] hover:text-[#222222]'
+                : 'text-[#222222] border border-[#20BEAD] hover:bg-[#f2f2f2] hover:text-[#222222]'
                 }`}
               onClick={() => isMobile && setDropdownVisible(!dropdownVisible)}
               onMouseLeave={() => !isMobile && setActiveSubCategory(null)}
 
             >
-              <FaBars className="text-sm " />
-              <span className="md:block mr-8 	text-[#20BEAD] font-montserrat text-font-black text-sm leading-normal">
+              <FaBars className="text-sm text-[#20BEAD] " />
+              <span className="md:block mr-8 	text-[#20BEAD] font-montserrat  text-sm leading-normal">
                 All Categories
               </span>
               <span
                 className={`ml-2 transform transition-transform duration-300 ${dropdownVisible ? 'rotate-180' : 'rotate-0'
                   }`}
               >
-                <FaChevronDown className="text-xs" />
+                <FaChevronDown className="text-xs text-[#20BEAD]" />
               </span>
             </button>
 

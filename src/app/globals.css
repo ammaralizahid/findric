@@ -1,9 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* Add this to your main CSS file */
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
+
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'swiper/css/autoplay';
+
+
+@layer components {
+  .custom-pagination {
+    @apply flex justify-center;
+    padding-bottom: 20px 
+  }
+  .custom-pagination .swiper-pagination-bullet {
+    @apply bg-gray-300 opacity-100;
+    width: 6px;
+    height: 6px; 
+    margin: 0 6px; 
+    transition: background-color 0.3s ease; 
+  }
+
+  .custom-pagination .swiper-pagination-bullet-active {
+    @apply bg-[#4DB6AC]; 
+  }
+  
+}
+/* .scrollbar-hide {
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; 
+}
+
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+} */
+
 
 :root {
   --background: #ffffff;
@@ -37,7 +75,7 @@ body {
   height: 10px;
   width: 10px;
   transform: scale(1);
-  animation: pulse 1.2s infinite; /* Use the name of the keyframes here */
+  animation: pulse 1.2s infinite; 
 }
 
 @keyframes pulse {
@@ -266,7 +304,4 @@ html {
     transform: translateX(-3000px);
   }
 }
-
-
-
 

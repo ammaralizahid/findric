@@ -99,10 +99,16 @@ const Home = async () => {
             Our Domains
           </h2>
 
-          
-          <ProductSlider>
+
+          <ProductSlider autoScroll={true} scrollSpeed={4000} sliderId="home">
         {cardData.length > 0 ? (
-          cardData.map((item) => <Product key={item.id} item={item} />)
+          cardData.map((item) => 
+            <Product
+            key={item?.id}  
+            title={item?.title}
+            image={item?.image}
+            description={item?.description}
+            />)
         ) : (
           <p className="text-center text-gray-500">No products available.</p>
         )}

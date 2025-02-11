@@ -4,20 +4,22 @@ import { CardItem } from "../mookdata/mook";
 import Image from "next/image";
 
 interface CardProps {
-  item: CardItem;
+  title: string;
+  image: string;
+  description: string;
 }
 
-const product: React.FC<CardProps> = ({ item }) => (
+const product: React.FC<CardProps> = ({ title, image, description }) => (
   <div
-    className="flex-shrink-0 text-center mx-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-[325px] bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+    className="flex-shrink-0 text-center  w-full  bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
     role="article"
-    aria-label={item.title}
+    aria-label={title}
   >
     {/* Image Section */}
-    <div className="relative h-48 overflow-hidden group">
+    <div className="relative h-48 overflow-hidden">
       <Image
-        src={item.image}
-        alt={item.title}
+        src={image}
+        alt={title}
         layout="fill"
         objectFit="cover"
         className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
@@ -32,12 +34,12 @@ const product: React.FC<CardProps> = ({ item }) => (
     {/* Content Section */}
     <div className="p-4">
       <h3 className="text-lg font-semibold mb-2 text-gray-800">
-        {item?.title}
+        {title}
       </h3>
-      <p className="text-gray-400 mb-4 ">
-        {item?.description}
+      <p className="text-gray-400 text-16 mb-4 ">
+        {description}
       </p>
-      <div className="flex justify-between items-center">
+      {/* <div className="flex justify-between items-center">
         <span className="text-lg font-bold text-gray-700">{item?.price}</span>
         <Button
          type={"button"}
@@ -45,9 +47,12 @@ const product: React.FC<CardProps> = ({ item }) => (
           className="px-4 py-2 bg-[#4DB6AC]/80 text-white rounded-lg hover:bg-[#4DB6AC]"
           aria-label={item?.title}
         />
-      </div>
+      </div> */}     
     </div>
   </div>
 );
 
 export default product;
+
+
+
