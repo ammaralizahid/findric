@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from 'react';
-import { productListData } from '@/src/components/mock/mock';
+// import { productListData } from '@/mock/mock';
 import { ProductListCards } from './ProductListCrads';
+import { productListData } from '@/src/mock/mock';
 
 const ProductList: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
