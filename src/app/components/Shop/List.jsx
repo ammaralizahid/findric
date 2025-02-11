@@ -2,9 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import SideMenu from "./SideMenu";
-import ProductList from "./ProductList";
-import NavbarHome from "../Navbar/NavbarHome";
+// import ProductList from "./ProductList";
+// import NavbarHome from "../Navbar/NavbarHome";
 import { IoClose, IoFilter } from "react-icons/io5";
+import NavbarHome from "@/src/components/Navbar/NavbarHome";
+import ProductList from "./ProductList";
 // import Loader from "../Loader/Loader";
 
 function List() {

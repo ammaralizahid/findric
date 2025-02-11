@@ -11,7 +11,7 @@ import Animation from "../components/Animation/Animation";
 import Navbar from "../components/Navbar/Navbar";
 import ProductSlider from "../components/ProductSlider/ProductSlider";
 import Product from "../components/Product/Product";
-import cardData  from "../components/mookdata/mook"; 
+import cardData  from "../components/mock/mock"; 
 
 const Home = async () => {
   return (

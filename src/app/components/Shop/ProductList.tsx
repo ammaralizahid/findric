@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import ProductListData from '../mookdata/mook';
+import { productListData } from '@/src/components/mock/mock';
 import { ProductListCards } from './ProductListCrads';
 
 const ProductList: React.FC = () => {
@@ -67,7 +67,7 @@ const ProductList: React.FC = () => {
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          {ProductListData?.map((product) => (
+          {productListData?.map((product) => (
             <ProductListCards
               key={product?.id}
               id={product?.id}

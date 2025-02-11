@@ -1,6 +1,6 @@
 'use client';
 import Button from "../Button/index";
-import { CardItem } from "../mookdata/mook";
+import { CardItem } from "../mock/mock";
 import Image from "next/image";
 
 interface CardProps {
