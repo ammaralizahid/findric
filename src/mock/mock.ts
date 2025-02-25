@@ -12,6 +12,7 @@ export interface ProductListAItems {
   stars: number;
   price: number;
 }
+
 export const productListData: ProductListAItems[] = [
   {
     id: 1,
@@ -76,6 +77,37 @@ export const productListData: ProductListAItems[] = [
     name: "Men Hooded",
     price: 130.00,
   },
+];
+export const SingleproductListData: ProductListAItems[] = [
+  {
+    id: 1,
+    image: "https://images.unsplash.com/photo-1688413467024-c539918fdd7c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    stars: 5,
+    name: "Men Hooded",
+    price: 130.00,
+  },
+  {
+    id: 2,
+    image: "https://images.unsplash.com/photo-1600952841320-db92ec4047ca?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    stars: 4,
+    name: "Men Hooded",
+    price: 130.00,
+  },
+  {
+    id: 3,
+    image: "https://images.unsplash.com/photo-1626770537547-66e789b70e2d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    stars: 5,
+    name: "Men Hooded",
+    price: 130.00,
+  },
+  {
+    id: 4,
+    image: "https://images.unsplash.com/photo-1688413467024-c539918fdd7c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    stars: 4,
+    name: "Men Hooded",
+    price: 130.00,
+  },
+  
 ];
 
 export const cardData: CardItem[] = [
@@ -164,6 +196,41 @@ export const cardData: CardItem[] = [
     price: "$399.99",
   },
  
+];
+
+// mock/products.ts
+export const SingleProducts = [
+  {
+    id: 1,
+    name: 'Men Hooded Jacket',
+    price: 130.00,
+    description: 'Premium quality hooded jacket with multiple functional pockets',
+    sku: 'JKT-2024',
+    category: 'Outerwear',
+    tags: ['Men', 'Jacket', 'Winter', 'Hooded'],
+    images: [
+      'https://images.unsplash.com/photo-1688413467024-c539918fdd7c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Front view
+      'https://images.unsplash.com/photo-1624886656674-9bf7352dfb52?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Side view
+      'https://images.unsplash.com/photo-1566669573233-38a0113fbc9d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Back view
+      'https://images.unsplash.com/photo-1564077439888-928a90061fb3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'  // Detail close-up
+    ],
+    thumbnails: [
+      'https://images.unsplash.com/photo-1688413467024-c539918fdd7c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1624886656674-9bf7352dfb52?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1566669573233-38a0113fbc9d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1688413467024-c539918fdd7c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    ],
+    rating: 4.5,
+    reviewsCount: 23,
+    
+    features: [
+      'Water-resistant polyester shell',
+      'Adjustable drawcord hem',
+      // 'Multiple zippered pockets',
+      // 'Removable hood with faux fur trim'
+    ],
+    discountPercentage: 40,
+  }
 ];
 
 // export default {cardData, productListData};
