@@ -28,19 +28,39 @@
   }
   
 }
-/* .scrollbar-hide {
-  scrollbar-width: none; 
-  -ms-overflow-style: none;
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px; /* Smaller scrollbar width */
+  height: 1px; /* Smaller scrollbar height */
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none; 
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #c2c6cd;  /* Scrollbar thumb color */
+  border-radius: 2px; /* Rounded corners for the thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #F3F4F6; /* Scrollbar track color */
+  border-radius: 2px; /* Rounded corners for the track */
 }
 
 
-.scroll-smooth {
-  scroll-behavior: smooth;
-} */
+
+
+
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-flow {
+  background-size: 400% 400%;
+  animation: gradient-flow 15s ease infinite;
+}
+
+
+
 
 
 :root {

@@ -3,6 +3,8 @@ import NavbarHome from '@/src/components/Navbar/NavbarHome';
 import ProductSlider from '@/src/components/ProductSlider/ProductSlider';
 import Product from '@/src/components/Product/Product';
 import { cardData } from '@/src/mock/mock';
+import SearchBar from '@/src/components/SearchBar/SearchBar';
+import MapSection from '@/src/components/MapSection/MapSection';
 // import { cardData } from '@/src/components/mock/mock';
 // import cardData from '@/src/components/mock/mock';
 
@@ -10,6 +12,23 @@ export default function Home() {
   return (
     <div>
       <NavbarHome />
+
+      <div className="container w-11/12 mx-auto  p-4 ">
+      <SearchBar />
+     </div>
+
+    <section >
+        <h2 id="products-title" className="text-3xl font-semibold font-montserrat mt-5  text-center text-customGreen">
+        Google Maps
+        </h2>
+
+        
+      <MapSection />
+      </section>
+
+{/* <div className="min-h-screen bg-gray-50 p-4 md:p-8">
+      <SearchBar />
+    </div> */}
 
       {/* First Slider */}
       <section data-section="products" id="products-section" aria-labelledby="products-title">
