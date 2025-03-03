@@ -20,22 +20,6 @@ const RelatedProducts: React.FC = () => {
     </div>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      {/* {SingleproductListData?.map((product) => (
-        <div 
-          key={product?.id} 
-          className="group relative "
-        >
-          <ProductListCards
-            id={product?.id}
-            image={product?.image}
-            name={product?.name}
-            price={product?.price}
-            stars={product?.stars}
-            // className="hover:shadow-xl" // Add className prop to cards
-          />
-        </div>
-      ))} */}
-      
 
               {SingleproductListData?.map((product) => {
           const actualPrice = product.price / (1 - product.discountPercentage / 100);
@@ -53,6 +37,8 @@ const RelatedProducts: React.FC = () => {
               stars={product.stars}
               actualPrice={actualPrice}
               discountPercentage={product.discountPercentage}
+              stockLeft={5} 
+              soldCount={25}
             />
             </div>
           );
