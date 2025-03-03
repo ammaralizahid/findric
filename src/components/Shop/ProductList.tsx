@@ -80,6 +80,8 @@ const ProductList: React.FC = () => {
         stars={product.stars}
         actualPrice={actualPrice}
         discountPercentage={product.discountPercentage}
+        stockLeft={5} 
+         soldCount={25}
       />
     );
   })}
