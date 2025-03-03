@@ -11,6 +11,7 @@ export interface ProductListAItems {
   name: string;
   stars: number;
   price: number;
+  discountPercentage: number;
 }
 
 export const productListData: ProductListAItems[] = [
@@ -20,20 +21,23 @@ export const productListData: ProductListAItems[] = [
     stars: 5,
     name: "Men Hooded",
     price: 130.00,
+    discountPercentage: 20, // Added discount
   },
   {
     id: 2,
     image: "https://images.unsplash.com/photo-1600952841320-db92ec4047ca?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     stars: 4,
     name: "Men Hooded",
-    price: 130.00,
+    price: 110.00,
+    discountPercentage: 40, // Added discount
   },
   {
     id: 3,
     image: "https://images.unsplash.com/photo-1626770537547-66e789b70e2d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     stars: 5,
     name: "Men Hooded",
-    price: 130.00,
+    price: 90.00,
+    discountPercentage: 10, // Added discount
   },
   {
     id: 4,
@@ -41,6 +45,7 @@ export const productListData: ProductListAItems[] = [
     stars: 4,
     name: "Men Hooded",
     price: 130.00,
+    discountPercentage: 20, // Added discount
   },
   {
     id: 5,
@@ -48,6 +53,7 @@ export const productListData: ProductListAItems[] = [
     stars: 5,
     name: "Men Hooded",
     price: 130.00,
+    discountPercentage: 20, 
   },
   {
     id: 6,
@@ -55,6 +61,7 @@ export const productListData: ProductListAItems[] = [
     stars: 3,
     name: "Men Hooded",
     price: 130.00,
+    discountPercentage: 20, // Added discount
   },
   {
     id: 7,
@@ -62,6 +69,7 @@ export const productListData: ProductListAItems[] = [
     stars: 5,
     name: "Men Hooded",
     price: 130.00,
+    discountPercentage: 20, // Added discount
   },
   {
     id: 8,
@@ -69,6 +77,7 @@ export const productListData: ProductListAItems[] = [
     stars: 5,
     name: "Men Hooded",
     price: 130.00,
+    discountPercentage: 20, // Added discount
   },
   {
     id: 9,
@@ -76,6 +85,7 @@ export const productListData: ProductListAItems[] = [
     stars: 4,
     name: "Men Hooded",
     price: 130.00,
+    discountPercentage: 20, // Added discount
   },
 ];
 export const SingleproductListData: ProductListAItems[] = [
@@ -85,20 +95,23 @@ export const SingleproductListData: ProductListAItems[] = [
     stars: 5,
     name: "Men Hooded",
     price: 130.00,
+    discountPercentage: 20, // Added discount
   },
   {
     id: 2,
     image: "https://images.unsplash.com/photo-1600952841320-db92ec4047ca?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     stars: 4,
     name: "Men Hooded",
-    price: 130.00,
+    price: 90.00,
+    discountPercentage: 40, // Added discount
   },
   {
     id: 3,
     image: "https://images.unsplash.com/photo-1626770537547-66e789b70e2d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     stars: 5,
     name: "Men Hooded",
-    price: 130.00,
+    price: 110.00,
+    discountPercentage: 15, // Added discount
   },
   {
     id: 4,
@@ -106,6 +119,7 @@ export const SingleproductListData: ProductListAItems[] = [
     stars: 4,
     name: "Men Hooded",
     price: 130.00,
+    discountPercentage: 20, // Added discount
   },
   
 ];

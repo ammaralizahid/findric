@@ -65,7 +65,7 @@ const SideMenu: React.FC = () => {
             {/* Search */}
             <div className="search p-2">
                 <form>
-                    <div className="flex items-center border-2 border-[#20bead] rounded-lg overflow-hidden bg-gray-50 hover:bg-white transition-colors focus-within:ring-2 ring-teal-500">
+                    <div className="flex items-center border border-[#20bead] rounded-lg overflow-hidden bg-gray-50 hover:bg-white transition-colors focus-within:ring-2 ring-teal-500">
                         <input
                             type="text"
                             name="shop_search"
