@@ -23,19 +23,19 @@ const ProductList: React.FC = () => {
       <div className="shop-products">
         {/* Top Section */}
         <div className="flex flex-col mt-4 sm:mt-6 md:mt-8 sm:flex-row items-start sm:items-center justify-between mb-6 sm:mb-8 gap-y-4 sm:gap-x-4">
-          <div className="text-[#20bead] text-sm sm:text-base">
+          <div className=" text-sm sm:text-base">
             Showing 1–9 of 12 results
           </div>
 
           {/* Dropdown */}
           <div className="relative w-full sm:w-56 md:w-64">
             <div
-              className="flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 border border-[#20bead] rounded-lg cursor-pointer bg-white hover:border-teal-500 transition-colors"
+              className="flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 border  rounded-lg cursor-pointer bg-white hover:border-teal-500 transition-colors"
               onClick={toggleDropdown}
             >
-              <span className="text-[#20bead] text-sm sm:text-base">{selectedOption}</span>
+              <span className=" text-sm sm:text-base">{selectedOption}</span>
               <svg
-                className={`w-4 h-4 sm:w-5 sm:h-5 ml-2 text-[#20bead] transform transition-transform ${isDropdownOpen ? 'rotate-180' : ''
+                className={`w-4 h-4 sm:w-5 sm:h-5 ml-2  transform transition-transform ${isDropdownOpen ? 'rotate-180' : ''
                   }`}
                 fill="none"
                 stroke="currentColor"
@@ -68,16 +68,23 @@ const ProductList: React.FC = () => {
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          {productListData?.map((product) => (
-            <ProductListCards
-              key={product?.id}
-              id={product?.id}
-              image={product?.image}
-              name={product?.name}
-              price={product?.price}
-              stars={product?.stars}
-            />
-          ))}
+        {productListData?.map((product) => {
+    const actualPrice = product.price / (1 - product.discountPercentage / 100);
+    return (
+      <ProductListCards
+        key={product.id}
+        id={product.id}
+        image={product.image}
+        name={product.name}
+        price={product.price}
+        stars={product.stars}
+        actualPrice={actualPrice}
+        discountPercentage={product.discountPercentage}
+        stockLeft={5} 
+         soldCount={25}
+      />
+    );
+  })}
         </div>
 
         {/* Pagination */}

@@ -12,6 +12,7 @@ import ProductList from "./ProductList";
 function List() {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
 
+// This function toggles the side menu open or closed
   const toggleSideMenu = () => setIsSideMenuOpen(!isSideMenuOpen);
   const closeSideMenu = () => setIsSideMenuOpen(false);
 
