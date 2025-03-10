@@ -1,7 +1,10 @@
-'use client';
+"use client";
 
 import React, { useState, useEffect } from "react";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import Image from "next/image";
+import Loader from "../Loader/Loader";
+import earthBall from '@/public/assets/earth_ball.png'
 import { motion } from "framer-motion";
 
 interface Location {
@@ -9,7 +12,7 @@ interface Location {
   lng: number;
 }
 
-interface Star {  
+interface Star {
   id: number;
   top: string;
   left: string;
@@ -22,7 +25,12 @@ const MapSection = () => {
   const [path, setPath] = useState<{ left: string; top: string }[]>([]);
   const [times, setTimes] = useState<number[]>([]);
   const [stars, setStars] = useState<Star[]>([]);
-  const GOOGLE_MAP_LIBRARIES: ("places" | "drawing" | "geometry" | "visualization")[] = ["places"];
+  const GOOGLE_MAP_LIBRARIES: (
+    | "places"
+    | "drawing"
+    | "geometry"
+    | "visualization"
+  )[] = ["places"];
   const { isLoaded } = useJsApiLoader({
     libraries: GOOGLE_MAP_LIBRARIES,
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",
@@ -124,7 +132,9 @@ const MapSection = () => {
     setTimes(times);
   }, []);
 
-  if (!isLoaded) return <div className="text-white">Loading...</div>;
+  if (!isLoaded) return <div className="">
+    <Loader/>
+  </div>;
 
   return (
     <motion.div
@@ -136,8 +146,13 @@ const MapSection = () => {
       {/* Global CSS for twinkle animation */}
       <style jsx global>{`
         @keyframes twinkle {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.3; }
+          0%,
+          100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.3;
+          }
         }
       `}</style>
 
@@ -208,14 +223,14 @@ const MapSection = () => {
             // border: '2px solid rgba(100, 150, 255, 0.3)' ,
           }}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="300" height="300">
-            <circle cx="100" cy="100" r="95" fill="url(#earthTexture)" stroke="#000" strokeWidth="2" />
-            <defs>
-              <pattern id="earthTexture" patternUnits="userSpaceOnUse" width="200" height="200">
-                <image href="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" x="0" y="0" width="200" height="200" />
-              </pattern>
-            </defs>
-          </svg>
+          <Image
+            src={earthBall}
+            alt={"earth Ball"}
+            width={500}
+            height={500}
+            className="rounded-lg shadow-md"
+            priority
+          />
         </motion.div>
       )}
       <motion.div

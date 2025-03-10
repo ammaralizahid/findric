@@ -66,36 +66,36 @@ const SingleProductInfo = ({
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedSize, setSelectedSize] = useState(sizes[0]);
 
+const galleryThumbsOptions = {
+  modules: [Controller],
+  spaceBetween: 8,
+  speed: 0,
+  slidesPerView: 4,
+  touchRatio: 0.2,
+  slideToClickedSlide: true,
+  freeMode: true,
+  watchSlidesProgress: true,
+  direction: "horizontal" as const, // Default direction
 
-
-  const galleryThumbsOptions = {
-    modules: [Controller],
-    spaceBetween: 8,
-    slidesPerView: 4,
-    touchRatio: 0.2,
-    slideToClickedSlide: true,
-    onSwiper: (swiper: SwiperType) => setGalleryThumbs(swiper),
-    freeMode: true,
-    watchSlidesProgress: true,
-    breakpoints: {
-      640: {
-        slidesPerView: 4,
-        spaceBetween: 10,
-        direction: 'horizontal' as const
-      },
-      768: {
-        direction: 'vertical' as const,
-        slidesPerView: 4,
-        spaceBetween: 8
-      },
-      1024: {
-        direction: 'horizontal' as const,
-        slidesPerView: 4,
-        spaceBetween: 10
-      }
+  breakpoints: {
+    640: {
+      slidesPerView: 4,
+      spaceBetween: 10,
+      direction: "horizontal" as const, // Ensure it remains horizontal
     },
-    direction: 'horizontal' as const,
-  };
+    768: {
+      direction: "vertical" as const, // Ensure this changes correctly
+      slidesPerView: 4,
+      spaceBetween: 8,
+    },
+    1024: {
+      direction: "horizontal" as const, // Keep horizontal for larger screens
+      slidesPerView: 4,
+      spaceBetween: 10,
+    },
+  },
+};
+
 
   const galleryTopOptions = {
     modules: [EffectFade, Thumbs, Navigation], // Add Navigation module

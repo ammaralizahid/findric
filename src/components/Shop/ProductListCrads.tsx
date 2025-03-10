@@ -120,10 +120,10 @@ export const ProductListCards = ({ image, name, price, stars, actualPrice, disco
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-baseline gap-2">
             <span className="text-xl sm:text-2xl font-bold text-teal-600">
-              ${price.toFixed(2)}
+              ${price?.toFixed(2)}
             </span>
             <span className="text-sm text-gray-500 line-through">
-              ${actualPrice.toFixed(2)}
+              ${actualPrice?.toFixed(2)}
             </span>
           </div>
           <span className="text-xs sm:text-sm font-semibold text-red-600 bg-red-100 px-2 py-1 rounded-full shrink-0">

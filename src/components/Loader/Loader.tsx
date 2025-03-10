@@ -1,70 +1,43 @@
-// "use client";
+"use client";
 
-// import React, { useEffect, useRef } from 'react';
-// import { gsap } from 'gsap';
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
-function ProductLoader() {
-  // const loaderRef = useRef<HTMLDivElement>(null);
-  // const productCards = useRef<(HTMLDivElement | null)[]>([]);
+const Loader = () => {
+  const loaderRef = useRef(null);
+  const dotsRef = useRef([]);
 
-  // useEffect(() => {
-  //   const tl = gsap.timeline({ delay: 0.3 });
+  useEffect(() => {
+    const tl = gsap.timeline({ repeat: -1, yoyo: true });
 
-  //   // Entry animation
-  //   tl.from(loaderRef.current, {
-  //     duration: 0.4,
-  //     opacity: 0,
-  //     y: 20,
-  //     ease: 'power2.out'
-  //   });
-
-  //   // Product cards stagger animation
-  //   tl.from(productCards.current, {
-  //     duration: 0.6,
-  //     opacity: 0,
-  //     y: 20,
-  //     stagger: 0.1,
-  //     ease: 'power2.out'
-  //   }, 0.2);
-
-  //   // Floating animation for product cards
-  //   productCards.current.forEach((card, i) => {
-  //     gsap.to(card, {
-  //       duration: 1.2,
-  //       y: i % 2 === 0 ? '-=10' : '+=10',
-  //       repeat: -1,
-  //       yoyo: true,
-  //       ease: 'sine.inOut',
-  //       delay: i * 0.1
-  //     });
-  //   });
-
-  //   // Exit animation after 1.4 seconds
-  //   tl.to(loaderRef.current, {
-  //     duration: 0.5,
-  //     opacity: 0,
-  //     scale: 0.95,
-  //     ease: 'power2.in',
-  //     delay: 0.5 // Total delay (0.3 + 0.5 + 0.5 = 1.3s)
-  //   });
-
-  //   // Auto-remove from DOM
-  //   tl.eventCallback('onComplete', () => {
-  //     if (loaderRef.current) {
-  //       loaderRef.current.style.display = 'none';
-  //     }
-  //   });
-
-  // }, []);
+    tl.to(dotsRef.current, {
+      duration: 0.5,
+      y: -10,
+      opacity: 0.5,
+      stagger: 0.2,
+      ease: "power1.inOut",
+    }).to(dotsRef.current, {
+      duration: 0.5,
+      y: 0,
+      opacity: 1,
+      stagger: 0.2,
+      ease: "power1.inOut",
+    });
+  }, []);
 
   return (
-    <>
-    
-    
-    
-    
-    </>
+    <div ref={loaderRef} className="flex justify-center items-center h-screen bg-gray-100">
+      <div className="flex space-x-2">
+        {[...Array(3)].map((_, index) => (
+          <div
+            key={index}
+            ref={(el) => (dotsRef.current[index] = el)}
+            className="w-4 h-4 bg-blue-500 rounded-full"
+          ></div>
+        ))}
+      </div>
+    </div>
   );
-}
+};
 
-export default ProductLoader;
+export default Loader;
