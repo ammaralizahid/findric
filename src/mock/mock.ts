@@ -12,6 +12,38 @@ export interface ProductListAItems {
   stars: number;
   price: number;
 }
+
+export interface Category {
+  id: number;
+  name: string;
+  count: number;
+}
+
+export interface Condition {
+  id: number;
+  name: string;
+  count: number;
+}
+
+export interface City {
+  id: number;
+  name: string;
+  count: number;
+}
+
+export interface Color {
+  name: string;
+  count: number;
+  hex: string;
+}
+
+export interface SortOption {
+  label: string;
+  value: string;
+}
+
+
+
 export const productListData: ProductListAItems[] = [
   {
     id: 1,
@@ -165,5 +197,58 @@ export const cardData: CardItem[] = [
   },
  
 ];
+
+export const categories: Category[] = [
+  { id: 1, name: "Laptops", count: 159 },
+  { id: 2, name: "Accessories", count: 45 },
+  { id: 3, name: "Monitors", count: 30 },
+  { id: 4, name: "Keyboards", count: 25 },
+  { id: 5, name: "Mice", count: 20 },
+  { id: 6, name: "Printers", count: 15 },
+];
+
+export const conditions: Condition[] = [
+  { id: 1, name: "New", count: 89 },
+  { id: 2, name: "Used", count: 45 },
+  { id: 3, name: "Refurbished", count: 30 },
+  { id: 4, name: "Open Box", count: 15 },
+];
+
+export const cities: City[] = [
+  { id: 1, name: "Lahore", count: 120 },
+  { id: 2, name: "Karachi", count: 75 },
+  { id: 3, name: "Islamabad", count: 50 },
+  { id: 4, name: "Rawalpindi", count: 40 },
+  { id: 5, name: "Faisalabad", count: 30 },
+  { id: 6, name: "Multan", count: 20 },
+];
+
+export const sortOptions: SortOption[] = [
+  { label: 'High to Low', value: 'highToLow' },
+  { label: 'Low to High', value: 'lowToHigh' },
+  { label: 'Discount Low to High', value: 'discountLowToHigh' },
+  { label: 'Discount High to Low', value: 'discountHighToLow' },
+  { label: 'UPTO 25% OFF', value: 'upto25Off' },
+  { label: 'Contact seller', value: 'contactSeller' },
+];
+
+export const colors: Color[] = [
+  { name: "Black", count: 59, hex: "#000000" },
+  { name: "Silver", count: 54, hex: "#C0C0C0" },
+  { name: "Matte Black", count: 9, hex: "#28282B" },
+  { name: "Gray", count: 8, hex: "#808080" },
+  { name: "Platinum Silver", count: 6, hex: "#CECECE" },
+  { name: "Matte Silver", count: 4, hex: "#B6B6B6" },
+  { name: "Phantom Silver", count: 3, hex: "#8F8F8F" },
+  {
+    name: "Silver & Black",
+    count: 3,
+    hex: "linear-gradient(to right, #C0C0C0 50%, #000000 50%)",
+  },
+  { name: "Awesome Black", count: 2, hex: "#1A1A1A" },
+  { name: "Carbon Black", count: 2, hex: "#1C1C1C" },
+];
+
+export const priceOptions: string[] = ["10,000", "20,000", "30,000", "40,000", "50,000"];
 
 // export default {cardData, productListData};
