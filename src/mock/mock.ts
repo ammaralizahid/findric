@@ -14,7 +14,6 @@ export interface ProductListAItems {
   discountPercentage: number;
 }
 
-<<<<<<< Feature/store
 export interface Category {
   id: number;
   name: string;
@@ -46,8 +45,6 @@ export interface SortOption {
 
 
 
-=======
->>>>>>> main
 export const productListData: ProductListAItems[] = [
   {
     id: 1,
@@ -246,7 +243,6 @@ export const cardData: CardItem[] = [
  
 ];
 
-<<<<<<< Feature/store
 export const categories: Category[] = [
   { id: 1, name: "Laptops", count: 159 },
   { id: 2, name: "Accessories", count: 45 },
@@ -300,7 +296,6 @@ export const colors: Color[] = [
 
 export const priceOptions: string[] = ["10,000", "20,000", "30,000", "40,000", "50,000"];
 
-=======
 // mock/products.ts
 export const SingleProducts = [
   {
@@ -336,5 +331,4 @@ export const SingleProducts = [
   }
 ];
 
->>>>>>> main
 // export default {cardData, productListData};
