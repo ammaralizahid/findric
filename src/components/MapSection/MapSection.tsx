@@ -9,7 +9,7 @@ interface Location {
   lng: number;
 }
 
-interface Star {
+interface Star {  
   id: number;
   top: string;
   left: string;
@@ -185,39 +185,39 @@ const MapSection = () => {
           />
         ))}
       </div>
-{path.length > 0 && times.length > 0 && (
-  <motion.div
-    className="absolute w-24 h-24 rounded-full pointer-events-none transform-antialiased"
-    animate={{
-      rotate: 360,
-      left: path.map((p) => p.left),
-      top: path.map((p) => p.top),
-    }}
-    transition={{
-      duration: 120, // Increased from 24 to slow down
-      times: times,
-      repeat: Infinity,
-      ease: "linear",
-    }}
-    style={{
-      translateX: "-50%",
-      translateY: "-50%",
-      width: "300px",
-      height: "300px",
-      //  boxShadow: '0 0 40px rgba(65, 105, 225, 0.5)',
-      // border: '2px solid rgba(100, 150, 255, 0.3)' ,
-    }}
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="300" height="300">
-      <circle cx="100" cy="100" r="95" fill="url(#earthTexture)" stroke="#000" strokeWidth="2"/>
-      <defs>
-        <pattern id="earthTexture" patternUnits="userSpaceOnUse" width="200" height="200">
-          <image href="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" x="0" y="0" width="200" height="200"/>
-        </pattern>
-      </defs>
-    </svg>
-  </motion.div>
-)}
+      {path.length > 0 && times.length > 0 && (
+        <motion.div
+          className="absolute w-24 h-24 rounded-full pointer-events-none transform-antialiased"
+          animate={{
+            rotate: 360,
+            left: path.map((p) => p.left),
+            top: path.map((p) => p.top),
+          }}
+          transition={{
+            duration: 120, // Increased from 24 to slow down
+            times: times,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          style={{
+            translateX: "-50%",
+            translateY: "-50%",
+            width: "300px",
+            height: "300px",
+            //  boxShadow: '0 0 40px rgba(65, 105, 225, 0.5)',
+            // border: '2px solid rgba(100, 150, 255, 0.3)' ,
+          }}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="300" height="300">
+            <circle cx="100" cy="100" r="95" fill="url(#earthTexture)" stroke="#000" strokeWidth="2" />
+            <defs>
+              <pattern id="earthTexture" patternUnits="userSpaceOnUse" width="200" height="200">
+                <image href="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" x="0" y="0" width="200" height="200" />
+              </pattern>
+            </defs>
+          </svg>
+        </motion.div>
+      )}
       <motion.div
         className="rounded-2xl shadow-2xl max-w-[1200px] m-auto relative z-10 border-2 border-white/20 backdrop-blur-md"
         style={{ width: "80%", height: "54vh" }}
