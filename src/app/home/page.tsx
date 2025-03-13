@@ -17,14 +17,17 @@ export default function Home() {
         <SearchBar />
       </div>
 
-      <section>
-        <h2
+      <section
+        data-section="google-map"
+        id="google-map"
+        aria-labelledby="google-map-title"
+      >
+                <h2
           id="products-title"
-          className="text-3xl font-semibold font-montserrat mt-5  text-center text-customGreen"
+          className="text-3xl font-semibold font-montserrat mt-10  text-center text-[#410445]"
         >
-          Google Maps
+          Find It Fast, Get It Local 
         </h2>
-
         <MapSection />
       </section>
 
@@ -38,7 +41,7 @@ export default function Home() {
           id="products-title"
           className="text-3xl font-semibold font-montserrat mt-10  text-center text-customGreen"
         >
-          Our Categories
+          {/* Our Categories */}
         </h2>
         <ProductSlider
           autoScroll={true}
@@ -68,9 +71,9 @@ export default function Home() {
       >
         <h2
           id="products-title"
-          className="text-customGreen mt-10  flex font-montserrat font-semibold text-3xl justify-center lg:px-4"
+          className=" mt-10 ml-3 flex font-montserrat font-semibold text-20 justify-left lg:px-4"
         >
-          Our Domains
+          Recommended Products
         </h2>
         <ProductSlider autoScroll={true} scrollSpeed={4000} sliderId="domains">
           {cardData.length > 0 ? (

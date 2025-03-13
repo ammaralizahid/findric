@@ -1,9 +1,10 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import mainLogo from '@/public/assets/mainLogo.svg';
-import MobileMenuToggle from '../MobileMenuToggle';
-import HomeCatrgories from '../Dropdown/HomeCategories';
+import React from "react";
+import Link from "next/link";
+import Button from "../Button";
+import Image from "next/image";
+import mainLogo from "@/public/assets/mainLogo_1.png";
+import MobileMenuToggle from "../MobileMenuToggle";
+import HomeCatrgories from "../Dropdown/HomeCategories";
 // import AllCollectioMenu from './AllCollectionMenu';
 
 const NavbarHome = () => {
@@ -25,8 +26,7 @@ const NavbarHome = () => {
             </Link>
           </div>
 
-    {/* <AllCollectioMenu/> */}
-
+          {/* <AllCollectioMenu/> */}
 
           {/* Categories Dropdown */}
           <div className=" ml-[-23px] md:mb-10 md:ml-6">
@@ -40,16 +40,17 @@ const NavbarHome = () => {
         {/* Navigation Links */}
         <ul className="hidden lg:flex items-center space-x-4 md:space-x-6 lg:space-x-8 text-sm md:text-lg relative">
           <li>
-            <Link
-              href="#pricing-section"
-              className="text-[#161f32] hover:text-[#20bead] font-montserrat text-sm md:text-base font-medium"
-            >
-              Market Place
-            </Link>
+            <Button
+              type={"button"}
+              text={"Market Place"}
+              className={
+                "text-[#161f32] hover:text-[#20bead] font-montserrat text-sm md:text-base font-medium"
+              }
+            />
           </li>
 
           <li className="flex items-center">
-            <Link href="/your-target-route">
+            <Link href="/product-list">
               <button className="ml-3 md:ml-6 px-6 md:px-8 h-11 bg-white border border-[#20bead] text-[#20bead] rounded-lg hover:bg-[#20bead] hover:text-white transition-colors duration-300">
                 Seller
               </button>

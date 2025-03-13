@@ -31,8 +31,7 @@ const page = () => {
             discountPercentage={product.discountPercentage}
             weight="750g"
             dimensions="30 × 20 × 5 cm"
-            material="100% Organic Cotton"
-          />
+            material="100% Organic Cotton" colors={[]} sizes={[]}          />
         ))}
       </div>
 

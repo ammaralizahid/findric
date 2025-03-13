@@ -1,7 +1,7 @@
 // app/components/Header.tsx
 import Link from "next/link";
 import Image from "next/image";
-import mainLogo from "@/public/assets/mainLogo.svg";
+import mainLogo from "@/public/assets/mainLogo_1.png";
 import arrow from "@/public/assets/arrow.svg";
 import MobileMenuToggle from "../MobileMenuToggle";
 import Dropdown from "../Pricing/DropDown";
@@ -26,7 +26,7 @@ const Navbar = () => {
         {/* Navigation Links */}
         <ul className="hidden lg:flex items-center space-x-4 md:space-x-6 lg:space-x-8 text-sm md:text-lg relative">
           <li>
-            <Link href="/your-target-route">
+            <Link href="#here">
               <button className="flex flex-row gap-1 ml-2 md:ml-4 px-3 md:px-4 h-11 items-center bg-[#4d94fb] border text-white rounded-lg transition-colors duration-300">
                 <div className="alert"></div>
                 <div className="font-montserrat text-sm md:text-base">
@@ -66,9 +66,9 @@ const Navbar = () => {
             <Dropdown />
           </li>
           <li className="flex items-center">
-            <Link href="/test">
+            <Link href="/home">
               <button className="ml-1 md:ml-2 px-6 md:px-8 h-11 bg-[#20bead] border border-white text-white rounded-lg hover:bg-[#20bead] hover:text-white transition-colors duration-300">
-                Explore Store
+                Explore Products
               </button>
             </Link>
             <Link href="/your-target-route">

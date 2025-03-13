@@ -1,20 +1,30 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import { Controller, EffectFade, Navigation, Thumbs } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Swiper as SwiperType } from 'swiper/types';
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-import 'swiper/css/thumbs';
-import 'swiper/css/controller';
-import Image from 'next/image';
+"use client";
+import React, { useState, useEffect } from "react";
+import { Controller, EffectFade, Navigation, Thumbs } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperType } from "swiper/types";
+import Link from "next/link";
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/thumbs";
+import "swiper/css/controller";
+import Image from "next/image";
 import {
-  FaStar, FaTag, FaTshirt, FaPalette, FaShoppingCart,
-  FaWeightHanging, FaRulerCombined, FaMapMarkerAlt,
-  FaBoxOpen, FaInfoCircle, FaPlus, FaMinus,
+  FaStar,
+  FaTag,
+  FaTshirt,
+  FaPalette,
+  FaShoppingCart,
+  FaWeightHanging,
+  FaRulerCombined,
+  FaMapMarkerAlt,
+  FaBoxOpen,
+  FaInfoCircle,
+  FaPlus,
+  FaMinus,
   FaChevronLeft,
-  FaChevronRight
-} from 'react-icons/fa';
+  FaChevronRight,
+} from "react-icons/fa";
 
 export interface Product {
   id: number;
@@ -52,13 +62,13 @@ const SingleProductInfo = ({
   reviewsCount,
   features,
   discountPercentage = 0,
-  colors = ['#000000', '#FFFFFF', '#FF0000'], // Default colors
-  sizes = ['S', 'M', 'L', 'XL'], // Default sizes
+  colors = ["#000000", "#FFFFFF", "#FF0000"], // Default colors
+  sizes = ["S", "M", "L", "XL"], // Default sizes
   weight,
   dimensions,
   material,
-  // careInstructions,
-}: Product) => {
+}: // careInstructions,
+Product) => {
   const [loadSwiper, setLoadSwiper] = useState(false);
   const [galleryThumbs, setGalleryThumbs] = useState<SwiperType | null>(null);
   const [quantity, setQuantity] = useState(1);
@@ -66,60 +76,59 @@ const SingleProductInfo = ({
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedSize, setSelectedSize] = useState(sizes[0]);
 
-const galleryThumbsOptions = {
-  modules: [Controller],
-  spaceBetween: 8,
-  speed: 0,
-  slidesPerView: 4,
-  touchRatio: 0.2,
-  slideToClickedSlide: true,
-  freeMode: true,
-  watchSlidesProgress: true,
-  direction: "horizontal" as const, // Default direction
+  const galleryThumbsOptions = {
+    modules: [Controller],
+    spaceBetween: 8,
+    speed: 0,
+    slidesPerView: 4,
+    touchRatio: 0.2,
+    slideToClickedSlide: true,
+    freeMode: true,
+    watchSlidesProgress: true,
+    direction: "horizontal" as const, // Default direction
 
-  breakpoints: {
-    640: {
-      slidesPerView: 4,
-      spaceBetween: 10,
-      direction: "horizontal" as const, // Ensure it remains horizontal
+    breakpoints: {
+      640: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+        direction: "horizontal" as const, // Ensure it remains horizontal
+      },
+      768: {
+        direction: "vertical" as const, // Ensure this changes correctly
+        slidesPerView: 4,
+        spaceBetween: 8,
+      },
+      1024: {
+        direction: "horizontal" as const, // Keep horizontal for larger screens
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
     },
-    768: {
-      direction: "vertical" as const, // Ensure this changes correctly
-      slidesPerView: 4,
-      spaceBetween: 8,
-    },
-    1024: {
-      direction: "horizontal" as const, // Keep horizontal for larger screens
-      slidesPerView: 4,
-      spaceBetween: 10,
-    },
-  },
-};
-
+  };
 
   const galleryTopOptions = {
     modules: [EffectFade, Thumbs, Navigation], // Add Navigation module
     spaceBetween: 0,
-    effect: 'fade' as const,
+    effect: "fade" as const,
     speed: 1000,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
   };
-
 
   useEffect(() => {
     setLoadSwiper(true);
   }, []);
 
-  const handleCount = (operation: 'inc' | 'dec') => {
-    setQuantity(prev => operation === 'inc' ? prev + 1 : Math.max(prev - 1, 1));
+  const handleCount = (operation: "inc" | "dec") => {
+    setQuantity((prev) =>
+      operation === "inc" ? prev + 1 : Math.max(prev - 1, 1)
+    );
   };
 
-  const discountedPrice = discountPercentage > 0
-    ? price - (price * discountPercentage) / 100
-    : price;
+  const discountedPrice =
+    discountPercentage > 0 ? price - (price * discountPercentage) / 100 : price;
 
   return (
     <div className="flex justify-center px-4 sm:px-6 lg:px-8 py-4 sm:py-8 bg-white">
@@ -160,7 +169,6 @@ const galleryThumbsOptions = {
               </Swiper>
             </div>
 
-
             {/* Thumbnail Slider - Vertical on md */}
             <div className="md:w-1/5 lg:w-full">
               <Swiper
@@ -198,7 +206,13 @@ const galleryThumbsOptions = {
                     ${discountedPrice.toFixed(2)}
                   </p>
                 )}
-                <p className={`text-2xl font-bold ${discountPercentage > 0 ? 'line-through text-gray-400' : 'text-[#20bead]'}`}>
+                <p
+                  className={`text-2xl font-bold ${
+                    discountPercentage > 0
+                      ? "line-through text-gray-400"
+                      : "text-[#20bead]"
+                  }`}
+                >
                   ${price.toFixed(2)}
                 </p>
                 {discountPercentage > 0 && (
@@ -216,10 +230,17 @@ const galleryThumbsOptions = {
                 <div className="flex items-center space-x-2">
                   <div className="flex text-yellow-400">
                     {[...Array(5)].map((_, i) => (
-                      <FaStar key={i} className={`w-5 h-5 ${i < rating ? 'fill-current' : 'fill-gray-300'}`} />
+                      <FaStar
+                        key={i}
+                        className={`w-5 h-5 ${
+                          i < rating ? "fill-current" : "fill-gray-300"
+                        }`}
+                      />
                     ))}
                   </div>
-                  <span className="text-sm text-gray-500">({reviewsCount} reviews)</span>
+                  <span className="text-sm text-gray-500">
+                    ({reviewsCount} reviews)
+                  </span>
                 </div>
               </div>
 
@@ -266,10 +287,11 @@ const galleryThumbsOptions = {
                     {sizes.map((size) => (
                       <button
                         key={size}
-                        className={`px-4 py-2 border-2 rounded-lg text-sm font-medium  transition-all ${selectedSize === size
-                            ? 'border-[#20bead] bg-[#20bead] text-white'
-                            : 'border-gray-200 text-gray-700 hover:border-[#20bead]'
-                          }`}
+                        className={`px-4 py-2 border-2 rounded-lg text-sm font-medium  transition-all ${
+                          selectedSize === size
+                            ? "border-[#20bead] bg-[#20bead] text-white"
+                            : "border-gray-200 text-gray-700 hover:border-[#20bead]"
+                        }`}
                         onClick={() => setSelectedSize(size)}
                       >
                         {size}
@@ -287,10 +309,11 @@ const galleryThumbsOptions = {
                     {colors.map((color, index) => (
                       <button
                         key={index}
-                        className={`w-8 h-8 rounded-full border-2 transition-transform ${selectedColor === color
-                            ? 'border-[#20bead] ring-2 ring-offset-1 ring-[#20bead] scale-110'
-                            : 'border-gray-200 hover:border-gray-400'
-                          }`}
+                        className={`w-8 h-8 rounded-full border-2 transition-transform ${
+                          selectedColor === color
+                            ? "border-[#20bead] ring-2 ring-offset-1 ring-[#20bead] scale-110"
+                            : "border-gray-200 hover:border-gray-400"
+                        }`}
                         style={{ backgroundColor: color }}
                         onClick={() => setSelectedColor(color)}
                       />
@@ -305,7 +328,7 @@ const galleryThumbsOptions = {
               <div className="flex items-center justify-between">
                 <div className="flex items-center border rounded-lg overflow-hidden shadow-sm">
                   <button
-                    onClick={() => handleCount('dec')}
+                    onClick={() => handleCount("dec")}
                     className="px-4 py-2 bg-gray-100 hover:bg-gray-200 transition-colors text-black"
                   >
                     <FaMinus className="w-4 h-4" />
@@ -317,7 +340,7 @@ const galleryThumbsOptions = {
                     className="w-12 text-center outline-none bg-white text-black font-medium"
                   />
                   <button
-                    onClick={() => handleCount('inc')}
+                    onClick={() => handleCount("inc")}
                     className="px-4 py-2 bg-gray-100 hover:bg-gray-200 transition-colors text-black"
                   >
                     <FaPlus className="w-4 h-4" />
@@ -328,6 +351,31 @@ const galleryThumbsOptions = {
                   Add to Cart
                 </button>
               </div>
+            </div>
+            {/* User Profile and Visit Store */}
+            <div className="flex items-center justify-between py-4 border-t">
+              {/* User Profile */}
+              <div className="flex items-center gap-4">
+                <img
+                  src={"https://via.placeholder.com/150"} // Default placeholder
+                  alt="User Avatar"
+                  className="w-12 h-12 rounded-full border border-gray-300"
+                />
+                <div>
+                  <p className="font-medium text-gray-900">john doe</p>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <FaMapMarkerAlt className="w-4 h-4 text-[#20bead] mr-1" />
+                    {/* {userLocation} */}
+                  </div>
+                </div>
+              </div>
+
+              {/* Visit Store Button */}
+              <Link href="/store">
+                <button className="px-6 py-2 bg-[#20bead] text-white rounded-lg hover:bg-[#1aa899] transition-colors font-medium shadow-md hover:shadow-lg">
+                  Visit Store
+                </button>
+              </Link>
             </div>
 
             {/* Enhanced Additional Info */}
