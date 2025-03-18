@@ -62,8 +62,8 @@ const SingleProductInfo = ({
   reviewsCount,
   features,
   discountPercentage = 0,
-  colors = ["#000000", "#FFFFFF", "#FF0000"], // Default colors
-  sizes = ["S", "M", "L", "XL"], // Default sizes
+  colors = [], // Default colors
+  sizes = [], // Default sizes
   weight,
   dimensions,
   material,
@@ -277,13 +277,13 @@ Product) => {
 
             {/* Size & Color Selection */}
             <div className="space-y-4 border-b pb-2">
-              <div className="flex justify-between">
-                <div className="w-1/2 pr-2">
+              <div className="flex justify-between ">
+                <div className="w-1/2 pr-2 ">
                   <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
                     <FaTshirt className="text-[#20bead]" />
                     Select Size
                   </h3>
-                  <div className="flex flex-wrap gap-2 mt-2">
+                  <div className="flex  flex-wrap gap-2 mt-2">
                     {sizes.map((size) => (
                       <button
                         key={size}
@@ -301,11 +301,11 @@ Product) => {
                 </div>
 
                 <div className=" w-1/2 pl-2 ">
-                  <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
+                  <h3 className="text-lg font-semibold text-gray-900 flex justify-end items-center gap-2">
                     <FaPalette className="text-[#20bead]" />
                     Choose Color
                   </h3>
-                  <div className="flex flex-wrap gap-2 mt-2 ml-8">
+                  <div className="flex justify-end flex-wrap gap-2 mt-2 ml-8">
                     {colors.map((color, index) => (
                       <button
                         key={index}
@@ -346,7 +346,7 @@ Product) => {
                     <FaPlus className="w-4 h-4" />
                   </button>
                 </div>
-                <button className="px-8 py-3 bg-[#20bead] text-white hover:bg-[#1aa899] transition-colors rounded-lg font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300 flex items-center gap-2">
+                <button className="px-4 py-3 bg-[#20bead] text-white hover:bg-[#1aa899] transition-colors rounded-lg font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300 flex items-center gap-2">
                   <FaShoppingCart className="w-5 h-5" />
                   Add to Cart
                 </button>
