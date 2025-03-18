@@ -7,11 +7,15 @@ import SideMenu from "./SideMenu";
 import { IoClose, IoFilter } from "react-icons/io5";
 import NavbarHome from "@/src/components/Navbar/NavbarHome";
 import ProductList from "./ProductList";
+import PreviosButton from "../PreviousButton/PreviousButton";
+
+import { useRouter } from 'next/navigation'
+
 // import Loader from "../Loader/Loader";
 
 function List() {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
-
+  const router = useRouter()
 // This function toggles the side menu open or closed
   const toggleSideMenu = () => setIsSideMenuOpen(!isSideMenuOpen);
   const closeSideMenu = () => setIsSideMenuOpen(false);
@@ -29,6 +33,14 @@ function List() {
     <>
       {/* <Loader/> */}
       <NavbarHome />
+
+      <PreviosButton 
+  type="button"
+  text="Back"
+  className="md:hidden ml-10 mt-10 sm:ml-10 px-6 md:px-8 h-11 bg-white border border-[#20bead] text-[#20bead] rounded-lg hover:bg-[#20bead] hover:text-white transition-colors duration-300"
+  onClick={() => router.back()}
+/>
+
       <section className="main-shop py-8 sm:py-12 lg:py-16">
         <div className="px-4 sm:px-6 lg:px-8">
           {/* Filter Button for Mobile */}
