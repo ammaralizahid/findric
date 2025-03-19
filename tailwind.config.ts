@@ -137,6 +137,7 @@ const config: Config = {
         // lg: { min: '1024px', max: '1240px' },
         lg_1: { min: '1024px', max: '1090px' },
         xl: { min: '1240px', max: '2000px' },
+        xs1: {  max: '355px' },
       },
     },
   },

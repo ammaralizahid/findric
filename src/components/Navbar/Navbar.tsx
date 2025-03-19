@@ -8,10 +8,10 @@ import Dropdown from "../Pricing/DropDown";
 
 const Navbar = () => {
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-b-[#ddd] border-b-[0.5px] lg:border-b-0">
+    <header className="sticky top-0 z-50 bg-white  border-b-[#ddd] border-b-[0.5px] lg:border-b-0">
       <nav className="w-full px-6 md:px-10 xl:px-[88px] py-4 md:py-5 flex justify-between items-center">
         {/* Logo */}
-        <div className="text-xl md:text-2xl font-bold flex items-center">
+        <div className="text-xl md:text-2xl  font-bold flex items-center">
           <Link href="/" className="text-gray-800 break-words inline-block">
             <Image
               src={mainLogo}

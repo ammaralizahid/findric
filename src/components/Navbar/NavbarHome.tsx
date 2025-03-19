@@ -1,54 +1,44 @@
 import React from "react";
 import Link from "next/link";
-import Button from "../Button";
 import Image from "next/image";
 import mainLogo from "@/public/assets/mainLogo_1.png";
 import MobileMenuToggle from "../MobileMenuToggle";
 import HomeCatrgories from "../Dropdown/HomeCategories";
-// import AllCollectioMenu from './AllCollectionMenu';
+import PageNameButton from "./PageNameButton";
 
 const NavbarHome = () => {
+
   return (
-    <header className="sticky top-0 z-50 bg-white border ring-offset-[#20bead]">
-      <nav className="w-full px-6 md:px-10 xl:px-[88px] py-4 md:py-5 flex flex-wrap border  justify-between">
-        {/* Logo and Categories Dropdown */}
+    <header className="sticky top-0 z-50 bg-white ring-offset-[#20bead]">
+      <nav className="w-full px-6 md:px-10 xl:px-[88px] py-4 md:py-5 flex flex-wrap border justify-between">
         <div className="flex flex-col md:flex-row items-start md:items-center">
-          {/* Logo */}
           <div className="text-xl md:text-2xl font-bold">
             <Link href="/" className="text-gray-800 break-words inline-block">
               <Image
                 src={mainLogo}
                 alt="Logo"
-                width={150} // Adjust width for smaller screens
-                height={80} // Adjust height for smaller screens
-                className="h-auto max-w-full lg_1:w-100" // Maintain aspect ratio
+                width={150}
+                height={80}
+                className="h-auto max-w-full lg_1:w-100"
               />
             </Link>
           </div>
 
-          {/* <AllCollectioMenu/> */}
-
-          {/* Categories Dropdown */}
-          <div className=" ml-[-23px] md:mb-10 md:ml-6">
+          <div className="sm:block xs1:hidden ml-[-23px] md:mb-10 md:ml-6">
             <HomeCatrgories />
           </div>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <MobileMenuToggle />
 
-        {/* Navigation Links */}
+        <div className="xs1:block hidden">
+          <HomeCatrgories />
+        </div>
+
         <ul className="hidden lg:flex items-center space-x-4 md:space-x-6 lg:space-x-8 text-sm md:text-lg relative">
           <li>
-            <Button
-              type={"button"}
-              text={"Market Place"}
-              className={
-                "text-[#161f32] hover:text-[#20bead] font-montserrat text-sm md:text-base font-medium"
-              }
-            />
+            <PageNameButton />
           </li>
-
           <li className="flex items-center">
             <Link href="/product-list">
               <button className="ml-3 md:ml-6 px-6 md:px-8 h-11 bg-white border border-[#20bead] text-[#20bead] rounded-lg hover:bg-[#20bead] hover:text-white transition-colors duration-300">

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import Image from "next/image";
-import Loader from "../Loader/Loader";
+// import Loader from "../Loader/Loader";
 import earthBall from '@/public/assets/earth_ball.png'
 import { motion } from "framer-motion";
 
@@ -133,7 +133,8 @@ const MapSection = () => {
   }, []);
 
   if (!isLoaded) return <div className="">
-    <Loader/>
+    {/* <Loader/> */}
+    Loading...
   </div>;
 
   return (
