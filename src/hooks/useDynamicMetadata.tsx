@@ -116,3 +116,4 @@ const useDynamicMetadata = () => {
 };
 
 export default useDynamicMetadata;
+
