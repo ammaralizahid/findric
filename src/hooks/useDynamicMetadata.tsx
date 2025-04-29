@@ -93,9 +93,9 @@ const useDynamicMetadata = () => {
 
   useEffect(() => {
     const defaultMetadata = {
-      title: "FindNow - Inventory Management System",
+      title: "Findric - Inventory Management System",
       description:
-        "Manage your business inventory and reach global customers with FindNow.",
+        "Manage your business inventory and reach global customers with Findric.",
     };
     // console.log("Updated Meta>>>>>", metadata)
     const { title, description } = currentSection

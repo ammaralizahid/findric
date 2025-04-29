@@ -21,7 +21,7 @@ export default function useSectionMeta() {
       const scrollY = window.scrollY;
 
       if (scrollY < 500) {
-        updateMeta("Features | FindNowwww", "Description for Home Section");
+        updateMeta("Features | Findric", "Description for Home Section");
       } else if (scrollY < 1500) {
         updateMeta("About | YourSite", "Description for About Section");
       } else {
