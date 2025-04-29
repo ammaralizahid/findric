@@ -39,7 +39,7 @@ const Home = async () => {
                   style={{ borderRadius: "100px" }}
                 />
                 <h1 className="lg:text-32 text-18 font-bold">
-                  Run Your Business from Anywhere with FindNow
+                  Run Your Business from Anywhere with FINDRIC
                 </h1>
                 <p className="mb-1 lg:text-24 text-14">
                   Get discovered by customers nearby, streamline your POS, and

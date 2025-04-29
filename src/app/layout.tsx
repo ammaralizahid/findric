@@ -14,23 +14,23 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL("https://find-now-nextjs.vercel.app"),
   title: {
-    default: "FindNow",
+    default: "Findric",
     template: "%s - Free Inventory & Marketplace Management System",
   },
   description:
-    "FindNow provides a comprehensive marketplace and inventory management system, designed to support service providers, small businesses, and global retailers with POS integrations, real-time analytics, and streamlined operations.",
+    "Findric provides a comprehensive marketplace and inventory management system, designed to support service providers, small businesses, and global retailers with POS integrations, real-time analytics, and streamlined operations.",
   keywords: [
     "inventory management",
     "marketplace system",
     "POS solution",
     "business management",
     "global reach",
-    "FindNow",
+    "Findric",
     "service providers",
   ],
   twitter: {
     card: "summary_large_image",
-    title: "FindNow - Free Inventory & POS Solution",
+    title: "Findric - Free Inventory & POS Solution",
     description:
       "A versatile platform for inventory management and marketplace solutions with POS support.",
   },
@@ -38,16 +38,16 @@ export const metadata: Metadata = {
     "google-site-verification": "ICYHTpLPY5OCwiF87Y2JBH9862VsZs9KJlj_9L7sWbM",
   },
   openGraph: {
-    title: "FindNow - Integrated POS and business solutions in one platform.",
+    title: "Findric - Integrated POS and business solutions in one platform.",
     description:
-      "Explore FindNow's free, user-friendly inventory management system and marketplace platform. Flexible and built for businesses worldwide.",
+      "Explore Findric's free, user-friendly inventory management system and marketplace platform. Flexible and built for businesses worldwide.",
     url: "https://find-now-nextjs.vercel.app",
     images: [
       {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "FindNow - POS and Inventory Management",
+        alt: "Findric - POS and Inventory Management",
       },
     ],
   },

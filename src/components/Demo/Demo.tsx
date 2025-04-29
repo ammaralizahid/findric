@@ -13,7 +13,7 @@ export default function ScheduleDemo() {
         Schedule Appointment
       </h1>
       <p className="text-16 font-medium text-center mt-7">
-        Our expert will guide you to learn ins and outs of FindNow, answer your
+        Our expert will guide you to learn ins and outs of FINDRIC, answer your
         inquiries and show a demo on how it works.
       </p>
       <div className="w-[200px] flex items-center justify-center mx-auto">

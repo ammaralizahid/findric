@@ -358,7 +358,7 @@ Product) => {
               <div className="flex items-center gap-4">
                 <Image
                   src="/logo.png"
-                  alt="FindNow Logo"
+                  alt="Findric Logo"
                   width={120}
                   height={60}
                   priority // (optional, good for above-the-fold images)
