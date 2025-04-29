@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "../components/Footer/Footer";
+import { Montserrat } from "next/font/google";
 
-// SEO Metadata
+// ✅ Use Next.js font optimization
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+});
+
+// ✅ SEO Metadata
 export const metadata: Metadata = {
   metadataBase: new URL("https://find-now-nextjs.vercel.app"),
   title: {
@@ -11,7 +19,6 @@ export const metadata: Metadata = {
   },
   description:
     "FindNow provides a comprehensive marketplace and inventory management system, designed to support service providers, small businesses, and global retailers with POS integrations, real-time analytics, and streamlined operations.",
-      // Additional metadata for SEO
   keywords: [
     "inventory management",
     "marketplace system",
@@ -24,7 +31,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "FindNow - Free Inventory & POS Solution",
-    description: "A versatile platform for inventory management and marketplace solutions with POS support.",
+    description:
+      "A versatile platform for inventory management and marketplace solutions with POS support.",
   },
   other: {
     "google-site-verification": "ICYHTpLPY5OCwiF87Y2JBH9862VsZs9KJlj_9L7sWbM",
@@ -43,9 +51,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-
 };
-
 
 export default function RootLayout({
   children,
@@ -54,13 +60,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className={`antialiased min-h-screen flex flex-col`}>
+      <body className={`${montserrat.className} antialiased min-h-screen flex flex-col`}>
         <main className="flex-grow">{children}</main>
         <Footer />
       </body>

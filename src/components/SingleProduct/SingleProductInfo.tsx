@@ -69,8 +69,8 @@ const SingleProductInfo = ({
   material,
 }: // careInstructions,
 Product) => {
-  const [loadSwiper, setLoadSwiper] = useState(false);
-  const [galleryThumbs, setGalleryThumbs] = useState<SwiperType | null>(null);
+  const [, setLoadSwiper] = useState(false);
+  const [galleryThumbs] = useState<SwiperType | null>(null);
   const [quantity, setQuantity] = useState(1);
 
   const [selectedColor, setSelectedColor] = useState(colors[0]);
@@ -346,7 +346,7 @@ Product) => {
                     <FaPlus className="w-4 h-4" />
                   </button>
                 </div>
-                <button className="px-8 py-3 bg-[#20bead] text-white hover:bg-[#1aa899] transition-colors rounded-lg font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300 flex items-center gap-2">
+                <button className="px-8 py-3 bg-[#20bead] text-white hover:bg-[#1aa899] rounded-lg font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300 flex items-center gap-2">
                   <FaShoppingCart className="w-5 h-5" />
                   Add to Cart
                 </button>
@@ -356,10 +356,12 @@ Product) => {
             <div className="flex items-center justify-between py-4 border-t">
               {/* User Profile */}
               <div className="flex items-center gap-4">
-                <img
-                  src={"https://via.placeholder.com/150"} // Default placeholder
-                  alt="User Avatar"
-                  className="w-12 h-12 rounded-full border border-gray-300"
+                <Image
+                  src="/logo.png"
+                  alt="FindNow Logo"
+                  width={120}
+                  height={60}
+                  priority // (optional, good for above-the-fold images)
                 />
                 <div>
                   <p className="font-medium text-gray-900">john doe</p>

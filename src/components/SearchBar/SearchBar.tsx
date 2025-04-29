@@ -82,6 +82,7 @@ export default function SearchForm() {
     } else {
       setSuggestions([]);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery]);
 
   // Handle search form submission

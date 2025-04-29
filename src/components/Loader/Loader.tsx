@@ -5,8 +5,7 @@ import { gsap } from "gsap";
 
 const Loader = () => {
   const loaderRef = useRef(null);
-  const dotsRef = useRef([]);
-
+  const dotsRef = useRef<(HTMLDivElement | null)[]>([]);
   useEffect(() => {
     const tl = gsap.timeline({ repeat: -1, yoyo: true });
 
@@ -31,7 +30,9 @@ const Loader = () => {
         {[...Array(3)].map((_, index) => (
           <div
             key={index}
-            ref={(el) => (dotsRef.current[index] = el)}
+            ref={(el) => {
+              dotsRef.current[index] = el;
+            }}
             className="w-4 h-4 bg-blue-500 rounded-full"
           ></div>
         ))}

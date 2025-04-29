@@ -1,13 +1,9 @@
-
 import NavbarHome from "@/src/components/Navbar/NavbarHome";
 import RelatedProducts from "@/src/components/RelatedProducts/RelatedProducts";
-import { ProductListCards } from "@/src/components/Shop/ProductListCrads";
 import SingleProductDetails from "@/src/components/SingleProduct/SingleProductDetails";
 import SingleProductInfo from "@/src/components/SingleProduct/SingleProductInfo";
-import { SingleproductListData, SingleProducts } from "@/src/mock/mock";
+import { SingleProducts } from "@/src/mock/mock";
 const page = () => {
-
-
   return (
     <>
       <NavbarHome />
@@ -31,7 +27,10 @@ const page = () => {
             discountPercentage={product.discountPercentage}
             weight="750g"
             dimensions="30 × 20 × 5 cm"
-            material="100% Organic Cotton" colors={[]} sizes={[]}          />
+            material="100% Organic Cotton"
+            colors={[]}
+            sizes={[]}
+          />
         ))}
       </div>
 
@@ -40,9 +39,8 @@ const page = () => {
       </div>
 
       <RelatedProducts />
-
     </>
-  )
-}
+  );
+};
 
 export default page;

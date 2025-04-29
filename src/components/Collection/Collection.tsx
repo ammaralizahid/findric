@@ -1,6 +1,11 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { FaChevronLeft, FaChevronRight, FaShoppingCart, FaHeart } from "react-icons/fa";
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaShoppingCart,
+  FaHeart,
+} from "react-icons/fa";
 import Image from "next/image";
 
 // Define the Product type
@@ -17,7 +22,6 @@ const Collection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState<boolean>(true);
   const [favorites, setFavorites] = useState<number[]>([]); // Array to keep track of favorite products
-  // const [showFavoriteButton, setShowFavoriteButton] = useState<number | null>(null); // Manage visibility of the favorite button
 
   // Type the useRef hook with HTMLDivElement for the slider container
   const sliderRef = useRef<HTMLDivElement | null>(null);
@@ -96,7 +100,6 @@ const Collection: React.FC = () => {
       discountedPrice: 159.99,
       inStock: true,
     },
-    
   ];
 
   // Auto-play functionality using useEffect hook
@@ -108,15 +111,20 @@ const Collection: React.FC = () => {
       }, 3000);
     }
     return () => clearInterval(interval);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex, isAutoPlaying]);
 
   // Navigation functions
   const handlePrev = (): void => {
-    setCurrentIndex((prev) => (prev === 0 ? Math.floor(products.length / 4) : prev - 1));
+    setCurrentIndex((prev) =>
+      prev === 0 ? Math.floor(products.length / 4) : prev - 1
+    );
   };
 
   const handleNext = (): void => {
-    setCurrentIndex((prev) => (prev === Math.floor(products.length / 4) ? 0 : prev + 1));
+    setCurrentIndex((prev) =>
+      prev === Math.floor(products.length / 4) ? 0 : prev + 1
+    );
   };
 
   // Handle dot navigation
@@ -135,23 +143,20 @@ const Collection: React.FC = () => {
   // Toggle favorite functionality
   const toggleFavorite = (id: number) => {
     console.log(typeof id); // Ensure this logs 'number'
-  
+
     setFavorites((prev) =>
-      prev.includes(id) ? prev.filter((favoriteId) => favoriteId !== id) : [...prev, id]
+      prev.includes(id)
+        ? prev.filter((favoriteId) => favoriteId !== id)
+        : [...prev, id]
     );
-  
-    // Show the favorite button for one second
-    // setShowFavoriteButton(id);
-  
-    // setTimeout(() => {
-    //   setShowFavoriteButton(null);
-    // }, 1000);
   };
-  
+
   return (
     <div className="relative w-full overflow-hidden py-8">
       {/* Heading for All Collections */}
-      <h2 className="text-3xl text-[#20BEAD] font-bold text-center mb-6">All Collections</h2>
+      <h2 className="text-3xl text-[#20BEAD] font-bold text-center mb-6">
+        All Collections
+      </h2>
 
       <div
         className="relative w-11/12 mx-auto overflow-hidden py-8"
@@ -170,19 +175,24 @@ const Collection: React.FC = () => {
           }}
         >
           {products.map((product) => (
-            <div key={product.id} className="min-w-full sm:min-w-[45%] lg:min-w-[30%] xl:min-w-[25%] p-4">
+            <div
+              key={product.id}
+              className="min-w-full sm:min-w-[45%] lg:min-w-[30%] xl:min-w-[25%] p-4"
+            >
               <div className="relative bg-white rounded-lg shadow-md min-h-[413px] hover:shadow-xl transition-transform hover:scale-105 overflow-hidden">
                 {/* Favorite Button */}
                 {/* {showFavoriteButton === product.id && ( */}
-                  <button
-                    className="absolute top-2 right-2 p-2 text-red-500 hover:text-red-700 z-10"
-                    onClick={() => toggleFavorite(product.id)}
-                    aria-label={`Add ${product.title} to favorites`}
-                  >
-                    <FaHeart
-                      className={`transition-colors ${favorites.includes(product.id) ? "text-red-600" : ""}`}
-                    />
-                  </button>
+                <button
+                  className="absolute top-2 right-2 p-2 text-red-500 hover:text-red-700 z-10"
+                  onClick={() => toggleFavorite(product.id)}
+                  aria-label={`Add ${product.title} to favorites`}
+                >
+                  <FaHeart
+                    className={`transition-colors ${
+                      favorites.includes(product.id) ? "text-red-600" : ""
+                    }`}
+                  />
+                </button>
                 {/* )} */}
 
                 <div className="relative  overflow-hidden aspect-[4/3]">
@@ -201,10 +211,18 @@ const Collection: React.FC = () => {
                   </h3>
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <span className="text-gray-500 line-through mr-2">${product.originalPrice}</span>
-                      <span className="text-[#20BEAD] font-bold">${product.discountedPrice}</span>
+                      <span className="text-gray-500 line-through mr-2">
+                        ${product.originalPrice}
+                      </span>
+                      <span className="text-[#20BEAD] font-bold">
+                        ${product.discountedPrice}
+                      </span>
                     </div>
-                    <span className={`text-sm ${product.inStock ? "text-green-500" : "text-red-500"}`}>
+                    <span
+                      className={`text-sm ${
+                        product.inStock ? "text-green-500" : "text-red-500"
+                      }`}
+                    >
                       {product.inStock ? "In Stock" : "Out of Stock"}
                     </span>
                   </div>
@@ -227,7 +245,9 @@ const Collection: React.FC = () => {
             <button
               key={index}
               onClick={() => handleDotClick(index)}
-              className={`w-2 h-2 rounded-full transition-colors ${index === currentIndex ? "bg-blue-600" : "bg-gray-300"}`}
+              className={`w-2 h-2 rounded-full transition-colors ${
+                index === currentIndex ? "bg-blue-600" : "bg-gray-300"
+              }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
